@@ -54,5 +54,5 @@ client.on("message", async message => {
     console.log(`${message.author.username} said: ${message.content}`);
 });
 
-client.login(process.env.BOT_TOKEN);
-//client.login(process.env.TOKEN);
+//client.login(process.env.BOT_TOKEN);
+client.login(process.env.TOKEN);
