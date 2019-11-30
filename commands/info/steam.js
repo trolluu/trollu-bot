@@ -12,7 +12,7 @@ module.exports = {
     run: async (bot, message, args) => {
         const token = "steamToken"
         if(!args[0]) return message.channel.send("Please provide an account name!").then(m => m.delete(5000))
-        const url = `http://api.steampowered.com/ISteamUser/ResolveVantityURL/v0001/?key=${token}&vanityurl=${args.join(" ")}`;
+        const url = `http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${token}&vanityurl=${args.join(" ")}`;
 
         fetch(url).then(res => res.json()).then(body => {
             if(body.response.success === 42) return message.channel.send("I was unable to find a steam profile with that name").then(m => m.delete(5000));
