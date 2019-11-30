@@ -22,6 +22,7 @@ client.categories = fs.readdirSync("./commands/");
 });
 
 client.on("ready", () => {
+module.exports = bot => {
     console.log("Online!");
 
     let statuses = [
@@ -43,7 +44,7 @@ client.on("ready", () => {
             //type: "WATCHING"
         //}
     //});
-});
+}});
 
 client.on("message", async message => {
 
