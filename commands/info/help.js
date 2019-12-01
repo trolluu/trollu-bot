@@ -50,8 +50,8 @@ function getCMD(client, message, input) {
     if (cmd.description) info += `\n**Description**: ${cmd.description}`;
     if (cmd.usage) {
         info += `\n**Usage**: ${cmd.usage}`;
-        embed.setFooter(`Syntax: <> = required, [] = optional`);
+        embed.setFooter(`Syntax: <> = required, [] = optional`).then(m => m.delete(10000));
     }
 
-    return message.channel.send(embed.setColor("GREEN").setDescription(info)).then(m => m.delete(10000));
+    return message.channel.send(embed.setColor("GREEN").setDescription(info));
 }
