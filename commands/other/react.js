@@ -1,4 +1,4 @@
-const Discord = require("discord.js")
+// const Discord = require("discord.js")
 
 // module.exports = {
 //     name: "react",
@@ -11,35 +11,35 @@ const Discord = require("discord.js")
 //     }
 // }
 
-client.on('message', message => {
-    if(message.author.bot)
-    {
-        if(message.embeds)
-        {
-            const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
-            if(embedMsg)
-            {
+// client.on('message', message => {
+//     if(message.author.bot)
+//     {
+//         if(message.embeds)
+//         {
+//             const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
+//             if(embedMsg)
+//             {
 
-                messgae.react('')
-                .then(reaction => reaction.message.react(''))
-                .then(reaction => reaction.message.react(''))
-                .then(reaction => reaction.message.react(''))
-                .then(reaction => reaction.message.delete(5000))
-                .then(msg => console.log("Deleted message"))
-                .catch(err => console.error);
-            }
-        }
-        return;
-    }
-    if(message.content.toLoweCase() === 'treact')
-    {
-        const embed = new RichEmbed();
-        embed.setTitle("Server Roles");
-        embed.setColor("RANDOM");
-        embed.setDescription("<:monkey:650553517638942722>")
+//                 messgae.react('')
+//                 .then(reaction => reaction.message.react(''))
+//                 .then(reaction => reaction.message.react(''))
+//                 .then(reaction => reaction.message.react(''))
+//                 .then(reaction => reaction.message.delete(5000))
+//                 .then(msg => console.log("Deleted message"))
+//                 .catch(err => console.error);
+//             }
+//         }
+//         return;
+//     }
+//     if(message.content.toLoweCase() === 'treact')
+//     {
+//         const embed = new RichEmbed();
+//         embed.setTitle("Server Roles");
+//         embed.setColor("RANDOM");
+//         embed.setDescription("<:monkey:650553517638942722>")
 
 
 
-        message.channel.send(embed);
-    }    
-});    
+//         message.channel.send(embed);
+//     }    
+// });    
