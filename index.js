@@ -21,16 +21,28 @@ client.categories = fs.readdirSync("./commands/");
     require(`./handler/${handler}`)(client);
 });
 
-client.on("ready", () => {
-    console.log("Online!");
-    client.user.setPresence({
-        status: "online",
-        game: {
-            name: "🐒 | thelp",
-            type: "WATCHING"
-        }
-    });
-});
+// client.on("ready", () => {
+//     console.log("Online!");
+//     client.user.setPresence({
+//         status: "online",
+//         game: {
+//             name: "🐒 | thelp",
+//             type: "WATCHING"
+//         }
+//     });
+// });
+
+
+bot.on("ready", async () =>{
+    console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
+    function changing_status() {
+        let status = ["thelp", "🐒_🐒", `${bot.guilds.size} servers!`]
+        let randomStatus = status[Math.floor(Math.random() * status.length)]
+        bot.user.setActivity(randomStatus, {tpye: 'WATCHING'});
+    }
+    setInterval(changing_status, 60000)
+})
+
 
 client.on("message", async message => {
 
