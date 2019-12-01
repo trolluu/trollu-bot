@@ -61,7 +61,7 @@ if(message.author.bot)
             if(embedMsg)
             {
 
-                embedMsg.message.react('650553517638942722')
+                message.react('650553517638942722')
                 .then(reaction => reaction.message.react('650553553663950848'))
                 .then(reaction => reaction.message.react('650553843725369355'))
                 .then(reaction => reaction.message.react('650559284685307935'))
