@@ -4,6 +4,7 @@ const { promptMessage } = require("../../functions.js");
 
 module.exports = {
     name: "vote",
+    aliases: ["v"],
     category: "other",
     description: "Vote",
     run: async (client, message, args) => {
@@ -26,12 +27,23 @@ module.exports = {
 
         // Verification stuffs
         if (emoji === "🐸") {
-            msg.delete();
+            //msg.delete();
 
-            toBan.ban(args.slice(1).join(" "))
-                .catch(err => {
-                    if (err) return message.channel.send(`Well.... the ban didn't work out. Here's the error ${err}`)
-                });
+            var roleName = reaction.emoji.name;
+            var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
+            var member = reaction.message.guild.members.find(member => member.id === user.id);
+
+            if(member.roles.has(role.id))
+            {
+                member.removeRole(role.id).then(member => {
+                    console.log("Removed " + member.user.username + " from the " + role.name + " role.");
+                }).catch(err => console.error);
+            }
+            else {
+                member.addRole(role.id).then(member => {
+                    console.log("Added " + member.user.username + " to the " + role.name + " role.");
+                }).catch(err => console.error);
+            }
 
             logChannel.send(embed);
         } else if (emoji === "🐒") {
