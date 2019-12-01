@@ -31,7 +31,7 @@ module.exports = {
             const { NumberOfVACBans, NumberOfGameBans } = body.players[0];
 
             const embed = new RichEmbed()
-                .setColor(cyan)
+                .setColor("#5780cd")
                 .setAuthor(`Steam Services | ${personaname}`, avatarfull)
                 .setThumbnail(avatarfull)
                 .setDescription(stripIndents`**Real Name:** ${realname || "Unknow"}
