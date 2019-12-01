@@ -19,7 +19,7 @@ module.exports = {
 
                 const id = body.response.steamid;
                 const summaries = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${token}&steamids=${id}`;
-                const bans = `http://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key=${token}&steamids${id}`;
+                const bans = `http://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key=${token}&steamids=${id}`;
                 const state = ["Offline", "Online", "Busy", "Away", "Snooze", "Looking to trade", "Looking to play"]
 
         fetch(summaries).then(res => res.json()).then(body => {
