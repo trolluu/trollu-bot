@@ -38,7 +38,7 @@ client.on("ready", async () =>{
     function changing_status() {
         let status = ["thelp", "🐒_🐒", `${client.guilds.size} servers!`]
         let randomStatus = status[Math.floor(Math.random() * status.length)]
-        client.user.setActivity(randomStatus, {tpye: 'WATCHING'});
+        client.user.setActivity(randomStatus, {type: 'WATCHING'});
     }
     setInterval(changing_status, 60000)
 });
