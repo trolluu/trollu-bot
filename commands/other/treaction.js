@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 
 
-client.on('message', message => {
+bot.on('message', message => {
     if(message.author.bot)
     {
         if(message.embeds)
