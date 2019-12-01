@@ -22,33 +22,14 @@ client.categories = fs.readdirSync("./commands/");
 });
 
 client.on("ready", () => {
-
-module.exports = bot => {
-    console.log("Online!")
-
-    let statuses = [
-        `${bot.guilds.size}!`,
-        "thelp",
-        `over ${bot.users.size} users!`
-    ]
-
-    setInterval(function() {
-        let status = statuses[Math.floor(Math.random() * statuses.length)];
-        bot.user.setActivity(status, {type: "WATCHING"});
-    }, 5000)
-}    
-    
-    
-    
-    
-    
-    //client.user.setPresence({
-        //status: "online",
-        //game: {
-            //name: "thelp",
-            //type: "WATCHING"
-        //}
-    //});
+    console.log("Online!");
+    client.user.setPresence({
+        status: "online",
+        game: {
+            name: "🐒",
+            type: "WATCHING"
+        }
+    });
 });
 
 client.on("message", async message => {
