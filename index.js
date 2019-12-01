@@ -21,16 +21,16 @@ client.categories = fs.readdirSync("./commands/");
     require(`./handler/${handler}`)(client);
 });
 
-client.on("ready", () => {
-    console.log("Online!");
-    client.user.setPresence({
-        status: "online",
-        game: {
-            name: "🐒",
-            type: "WATCHING"
-        }
-    });
-});
+// client.on("ready", () => {
+//     console.log("Online!");
+//     client.user.setPresence({
+//         status: "online",
+//         game: {
+//             name: "🐒",
+//             type: "WATCHING"
+//         }
+//     });
+// });
 
 client.on("message", async message => {
 
