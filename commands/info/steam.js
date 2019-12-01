@@ -18,7 +18,7 @@ module.exports = {
             if(body.response.success === 42) return message.channel.send("I was unable to find a steam profile with that name").then(m => m.delete(5000));
 
                 const id = body.response.steamid;
-                const summaries = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key${token}&steamids=${id}`;
+                const summaries = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${token}&steamids=${id}`;
                 const bans = `http://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key=${token}&steamids${id}`;
                 const state = ["Offline", "Online", "Busy", "Away", "Snooze", "Looking to trade", "Looking to play"]
 
