@@ -41,7 +41,7 @@ client.on("ready", async () =>{
         client.user.setActivity(randomStatus, {tpye: 'WATCHING'});
     }
     setInterval(changing_status, 60000)
-})
+});
 
 
 client.on("message", async message => {
