@@ -36,7 +36,7 @@ client.categories = fs.readdirSync("./commands/");
 client.on("ready", async () =>{
     console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
     function changing_status() {
-        let status = ["thelp", "🐒_🐒", `${client.guilds.size} servers!`]
+        let status = ["| thelp |", "| 🐒👀 |", `| ${client.guilds.size} servers! |`]
         let randomStatus = status[Math.floor(Math.random() * status.length)]
         client.user.setActivity(randomStatus, {type: 'WATCHING'});
     }
