@@ -15,8 +15,9 @@ module.exports = {
 
     const promptEmbed = new RichEmbed()
         .setColor("GREEN")
-        .setAuthor(`Vote becomes invalid after 30s.`)
-        .setDescription(`Do you want to vote?`)
+        .setAuthor(`Roles`)
+        .setDescription("<:frog:650812189782966303> - Zaba\n" +
+        "<:monkey:650812254442225664 - Malpa\n>")
 
     // Send the message
     await message.channel.send(promptEmbed).then(async msg => {
