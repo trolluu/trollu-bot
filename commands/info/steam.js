@@ -22,7 +22,7 @@ module.exports = {
                 const bans = `http://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key=${token}&steamids${id}`;
                 const state = ["Offline", "Online", "Busy", "Away", "Snooze", "Looking to trade", "Looking to play"]
 
-        fetch(summaries).then(res => res.join()).then(body => {
+        fetch(summaries).then(res => res.json()).then(body => {
             if(!body.response) return message.channel.send("I was unable to find a steam profile with that name").then(m => m.delete(5000));
             const { personaname, avatarfull, realname, personastate, loccountrycode, profileurl, timecreated } = body.response.players[0];
 
