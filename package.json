@@ -14,8 +14,10 @@
     "dateformat": "^3.0.3",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
+    "ffmpeg": "0.0.4",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.0",
-    "random-puppy": "^1.1.0"
+    "random-puppy": "^1.1.0",
+    "ytdl-core": "^1.0.3"
   }
 }
