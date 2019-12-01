@@ -24,7 +24,7 @@ module.exports = {
             .setTimestamp()
             .setFooter(bot.user.username.toUpperCase(), bot.user.displayAvatarURL)
 
-            message.channel.send(embed);
+            msg.edit(embed);
         })
     }
 }
