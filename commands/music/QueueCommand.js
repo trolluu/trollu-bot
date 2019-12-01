@@ -1,4 +1,4 @@
-const commando = require('discord.js');
+const commando = require('discord.js-commando');
 const discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const streamOptions = {
