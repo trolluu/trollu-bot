@@ -39,7 +39,7 @@ function getCMD(client, message, input) {
 
     const cmd = client.commands.get(input.toLowerCase()) || client.commands.get(client.aliases.get(input.toLowerCase()));
 
-    let info = `No information found for command **${input.toLowerCase()}**`;
+    let info = `No information found for command **${input.toLowerCase()}**`.then(m => m.delete(5000));
 
     if (!cmd) {
         return message.channel.send(embed.setColor("RED").setDescription(info));
@@ -53,5 +53,5 @@ function getCMD(client, message, input) {
         embed.setFooter(`Syntax: <> = required, [] = optional`);
     }
 
-    return message.channel.send(embed.setColor("GREEN").setDescription(info));
+    return message.channel.send(embed.setColor("GREEN").setDescription(info)).then(m => m.delete(10000));
 }
