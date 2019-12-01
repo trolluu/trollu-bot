@@ -77,7 +77,9 @@ if(message.author.bot)
         const embed = new RichEmbed();
         embed.setTitle("Server Roles");
         embed.setColor("RANDOM");
-        embed.setDescription("<:monkey:650553517638942722>")
+        embed.setDescription("<:monkey:650553517638942722> - Małpa\n" +
+        "<:frog:650553553663950848> - Żaba\n" +
+        "<:poop:650553843725369355> - Kupa");
 
 
 
