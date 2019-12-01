@@ -39,10 +39,10 @@ function getCMD(client, message, input) {
 
     const cmd = client.commands.get(input.toLowerCase()) || client.commands.get(client.aliases.get(input.toLowerCase()));
 
-    let info = `No information found for command **${input.toLowerCase()}**`.then(m => m.delete(5000));
+    let info = `No information found for command **${input.toLowerCase()}**`;
 
     if (!cmd) {
-        return message.channel.send(embed.setColor("RED").setDescription(info));
+        return message.channel.send(embed.setColor("RED").setDescription(info)).then(m => m.delete(5000));
     }
 
     if (cmd.name) info = `**Command name**: ${cmd.name}`;
@@ -50,7 +50,7 @@ function getCMD(client, message, input) {
     if (cmd.description) info += `\n**Description**: ${cmd.description}`;
     if (cmd.usage) {
         info += `\n**Usage**: ${cmd.usage}`;
-        embed.setFooter(`Syntax: <> = required, [] = optional`).then(m => m.delete(10000));
+        embed.setFooter(`Syntax: <> = required, [] = optional`);
     }
 
     return message.channel.send(embed.setColor("GREEN").setDescription(info));
