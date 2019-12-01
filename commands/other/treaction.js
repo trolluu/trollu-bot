@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 
 
-bot.on('message', message => {
+client.on('message', message => {
     if(message.author.bot)
     {
         if(message.embeds)
@@ -32,5 +32,26 @@ bot.on('message', message => {
         "<:poop:650553843725369355> - Kupa\n" +
         "<:ok_hand:650559284685307935> - Ok\n");
         message.channel.send(embed);
+    }
+});
+
+client.on('messageReactionAdd', (reaction, user) => {
+    if(user.bot)
+        return;
+
+    var roleName = reaction.emoji.name;
+    var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
+    var member = reaction.message.guild.members.find(member => member.id === user.id);
+
+    if(member.roles.has(role.id))
+    {
+        member.removeRole(role.id).then(member => {
+            console.log("Removed " + member.user.username + "from the" + role.name + " role.");
+        }).catch(err => console.error);
+    }
+    else {
+        member.addRole(role.id).then(member => {
+            console.log("Added " + member.user.username + "to the" + role.name + " role.");
+        }).catch(err => console.error);
     }
 });
