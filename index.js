@@ -57,8 +57,8 @@ client.on("message", async message => {
     if (cmd.length === 0) return;
 
     let command = client.commands.get(cmd);
-    if (!command) command = client.commands.get(client.aliases.get(cmd)).then(m => m.delete(5000));
-    
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
+    if (message.deletable) message.delete();
 
     if (command)
         command.run(client, message, args);
