@@ -24,7 +24,7 @@ client.categories = fs.readdirSync("./commands/");
 client.on("ready", () => {
 
 module.exports = bot => {
-    console.log("Online!");
+    console.log("Online!")
 
     let statuses = [
         `${bot.guilds.size}!`,
