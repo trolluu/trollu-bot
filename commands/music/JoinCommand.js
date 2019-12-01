@@ -1,4 +1,4 @@
-const commando = require('discord.js');
+const commando = require('discord.js-commando');
 
 module.exports = class JoinVoiceChannelCommand extends commando.Command {
     constructor(client) {
