@@ -36,7 +36,7 @@ module.exports = {
                 .setThumbnail(avatarfull)
                 .setDescription(stripIndents`**Real Name:** ${realname || "Unknow"}
                 **Status:** ${state[personastate]}
-                **Country:** :flag_${loccountrycode ? loccountrycode.toLowarCase() : "white"};
+                **Country:** :flag_${loccountrycode ? loccountrycode.toLowerCase() : "white"};
                 **Account Created:** ${dateFormat(timecreated * 1000, "d/mm/yyyy (h:MM:ss TT) ")}
                 **Bans:** Vac: ${NumberOfVACBans}, Game: ${NumberOfGameBans}
                 **Link:** [link to profile](${profileurl})`)
