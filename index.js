@@ -32,16 +32,6 @@ client.on("ready", () => {
     });
 });
 
-//console chatter
-let y = process.openStdin()
-y.addListener("data", res => {
-    let x = res.toString().trim().split(/ +/g)
-    bot.channels.get("567050680494194691").send(x.join(" "));
-});
-
-
-
-
 client.on("message", async message => {
 
     if (message.author.bot) return;
