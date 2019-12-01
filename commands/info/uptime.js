@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["up"],
     category: "info",
     description: "Returns latency and API ping",
-    run: async (client, message, args) => {
+    run: async (bot, message, args) => {
         
         function duration(ms) {
             const sec = Math.floor((ms / 1000) % 60).toString()
