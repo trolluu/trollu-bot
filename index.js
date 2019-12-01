@@ -72,7 +72,7 @@ if(message.author.bot)
         }
         return;
     }
-    if(message.content.toLoweCase() === 'treaction')
+    if(message.content.toLowerCase() === 'treaction')
     {
         const embed = new RichEmbed();
         embed.setTitle("Server Roles");
