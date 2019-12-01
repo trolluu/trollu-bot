@@ -33,12 +33,12 @@ client.categories = fs.readdirSync("./commands/");
 // });
 
 
-bot.on("ready", async () =>{
-    console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
+client.on("ready", async () =>{
+    console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
     function changing_status() {
-        let status = ["thelp", "🐒_🐒", `${bot.guilds.size} servers!`]
+        let status = ["thelp", "🐒_🐒", `${client.guilds.size} servers!`]
         let randomStatus = status[Math.floor(Math.random() * status.length)]
-        bot.user.setActivity(randomStatus, {tpye: 'WATCHING'});
+        client.user.setActivity(randomStatus, {tpye: 'WATCHING'});
     }
     setInterval(changing_status, 60000)
 })
