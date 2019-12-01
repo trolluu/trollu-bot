@@ -13,6 +13,17 @@ client.aliases = new Collection();
 
 client.categories = fs.readdirSync("./commands/");
 
+client.registry.registerGroups([
+    ['mod', 'mod commands'],
+    ['misc', 'misc commands'],
+    ['roles', 'roles commands'],
+    ['music', 'music bot commands']
+]).registerDefaults()
+.registerCommandsIn(path.join(__dirname, 'commands'));
+
+
+
+
 //config({
   //  path: __dirname + "/.env"
 //});
