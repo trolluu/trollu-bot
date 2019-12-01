@@ -17,15 +17,15 @@ module.exports = {
         .setColor("GREEN")
         .setAuthor(`Roles`)
         .setDescription("<:frog:650812189782966303> - Zaba\n" +
-        "<:monkey:650812254442225664 - Malpa\n>")
+        "<:monkey:650812254442225664> - Malpa\n")
 
     // Send the message
     await message.channel.send(promptEmbed).then(async msg => {
         // Await the reactions and the reactioncollector
-        const emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"]);
+        const emoji = await promptMessage(msg, message.author, 30, ["🐸", "🐒"]);
 
         // Verification stuffs
-        if (emoji === "✅") {
+        if (emoji === "🐸") {
             msg.delete();
 
             toBan.ban(args.slice(1).join(" "))
@@ -34,7 +34,7 @@ module.exports = {
                 });
 
             logChannel.send(embed);
-        } else if (emoji === "❌") {
+        } else if (emoji === "🐒") {
             msg.delete();
 
             message.reply(`ban canceled.`)
