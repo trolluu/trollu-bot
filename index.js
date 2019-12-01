@@ -62,9 +62,9 @@ if(message.author.bot)
             {
 
                 messgae.react('')
-                .then(reaction => reaction.message.react(''))
-                .then(reaction => reaction.message.react(''))
-                .then(reaction => reaction.message.react(''))
+                .then(reaction => reaction.message.react('650553517638942722'))
+                .then(reaction => reaction.message.react('650553553663950848'))
+                .then(reaction => reaction.message.react('650553843725369355'))
                 .then(reaction => reaction.message.delete(5000))
                 .then(msg => console.log("Deleted message"))
                 .catch(err => console.error);
