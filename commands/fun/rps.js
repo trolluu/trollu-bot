@@ -12,7 +12,7 @@ module.exports = {
         const embed = new RichEmbed()
             .setColor("#ffffff")
             .setFooter(message.guild.me.displayName, client.user.dispalyAvatarURL)
-            .setDescription("Add a reaction to one of these emojis to paly the game!")
+            .setDescription("Add a reaction to one of these emojis to play the game!")
             .setTimestamp();
 
         const m = await message.channel.send(embed);
