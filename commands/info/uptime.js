@@ -1,4 +1,5 @@
-const Discord = require("discord.js")
+// const Discord = require("discord.js")
+const { RichEmbed } = require("discord.js");
 
 module.exports = {
     name: "up time",
@@ -6,7 +7,7 @@ module.exports = {
     category: "info",
     description: "Returns latency and API ping",
     run: async (bot, message, args) => {
-        
+        const embed = new RichEmbed()
         function duration(ms) {
             const sec = Math.floor((ms / 1000) % 60).toString()
             const min = Math.floor((ms / (1000 * 60)) % 60).toString()
