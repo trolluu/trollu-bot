@@ -6,8 +6,8 @@ module.exports = {
     aliases: ["calc"],
     category: "other",
     description: "",
-    run: async (bot, message, args, tools) => {
-        if(!rags[0]) return message.channel.send('Please input a calculation!');
+    run: async (client, message, args, tools) => {
+        if(!args[0]) return message.channel.send('Please input a calculation!');
 
         let resp;
         try {
