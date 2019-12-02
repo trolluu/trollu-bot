@@ -16,6 +16,6 @@ module.exports = {
             return `${days.padStart(1, '0')} days, ${hrs.padStart(2, '0')} hours, ${min.padStart(2, '0')} minutes, ${sec.padStart(2, '0')} seconds!`
         }
         
-        message.channel.send(`I have been online for: ${duration(bot.uptime)}`).then(m => m.delete(10000))
+        message.channel.embed.send(`I have been online for: ${duration(bot.uptime)}`).then(m => m.delete(10000))
     }
 }
