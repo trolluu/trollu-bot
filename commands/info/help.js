@@ -53,5 +53,5 @@ function getCMD(client, message, input) {
         embed.setFooter(`Syntax: <> = required, [] = optional`);
     }
 
-    return message.channel.send(embed.setColor("GREEN").setDescription(info)).then(m => m.delete(15000));
+    return message.channel.send(embed.setColor("GREEN").setDescription(info)).then(m => m.delete(20000));
 }
