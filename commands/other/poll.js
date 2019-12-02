@@ -15,7 +15,9 @@ module.exports = {
             .setColor(0xffffff)
             .setFooter('React to vote.')
             .setDescription(args.join(' '))
-            .setTitle(`Poll Created By ${message.author.username}`);
+            .setTitle(`Poll Created By ${message.author.username}`)
+
+            .setTimestamp();
 
         let msg = await message.channel.send(embed);
 
