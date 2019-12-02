@@ -1,4 +1,5 @@
-const Discord = require("discord.js")
+// const Discord = require("discord.js")
+const { RichEmbed } = require("discord.js");
 
 module.exports = {
     name: "up time",
