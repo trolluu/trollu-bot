@@ -60,7 +60,12 @@ client.on("message", async message => {
     if (!command) command = client.commands.get(client.aliases.get(cmd));
     // if (message.deletable) message.delete();
 
-    // Dm
+    if (command)
+        command.run(client, message, args);
+
+    console.log(`${message.author.username} said: ${message.content} | ${client.guild}`);
+
+    // Dm //
     msg = message.content.toLowerCase();
     if(message.author.bot) return;
 
@@ -74,11 +79,6 @@ client.on("message", async message => {
         message.channel.send("done!").then(m => m.delete(5000));
     }
 
-
-    if (command)
-        command.run(client, message, args);
-
-    console.log(`${message.author.username} said: ${message.content} | ${client.guild}`);
 
 });
 
