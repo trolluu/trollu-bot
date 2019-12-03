@@ -66,7 +66,7 @@ client.on("message", async message => {
 
     mention = message.mentions.users.first();
 
-    if(msg.startsWith(prefix + "send")) {
+    if(msg.startsWith(prefix + "dm")) {
         if(mention == null) { return; }
         message.delete();
         mentionMessage = message.content.slice(0);
