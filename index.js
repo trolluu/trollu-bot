@@ -63,7 +63,7 @@ client.on("message", async message => {
     if (command)
         command.run(client, message, args);
 
-    console.log(`${message.author.username} said: ${message.content} | ${message.guild.name}`);
+    console.log(`${message.author.username} said: ${message.content} | ${message.channel.name} | ${message.guild.name}`);
 
     // Dm //
     msg = message.content.toLowerCase();
