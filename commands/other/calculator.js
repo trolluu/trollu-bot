@@ -11,7 +11,7 @@ module.exports = {
 
         let resp;
         try {
-            resp = math.eval(args.join(' '));
+            resp = math.evaluate(args.join(' '));
         }catch (e) {
             return message.channel.send('Sorry, please input a valid calculation!').then(m => m.delete(5000));
         }
