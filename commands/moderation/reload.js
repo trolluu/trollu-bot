@@ -8,7 +8,7 @@ module.exports = {
     usage: "<command>",
     category: "moderation",
     run: async (bot, message, args) => {
-        if(message.author.id != "323113623721607168") return message.channel.send("You're the bot the owner!")
+        if(message.author.id != "323113623721607168") return message.channel.send("You're not the bot owner!")
 
         if(!args[0]) return message.channel.send("Please provide a command to reload!")
 
