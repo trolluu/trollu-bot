@@ -84,18 +84,18 @@ client.on('guildMemberAdd', member => {
 
     const embed = new RichEmbed()
     
-    .setAuthor('<*Server Name*!>')
-    .setTitle(`<Welcome to *Server Name*, ${member.displayName}>!`)
+    .setAuthor('*Server Name*!')
+    .setTitle(`Welcome to *Server Name*, ${member.displayName}!`)
     .setColor("0xF08080")
-    .setDescription(`<Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n>`)
+    .setDescription(`Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n${guild.member.size}`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-    //.setImage('<http://i.imgur.com/yVpymuV.png>')
-    .setThumbnail(`<${member.user.avatarURL}>`)
+    .setImage('<http://i.imgur.com/yVpymuV.png>')
+    .setThumbnail(`${member.user.avatarURL}`)
     .addBlankField(true)
-    .addField("<Join our Minecraft Server!>",
-    "< >> golinetwork.online << >")
-    .addField("<Want to invite your friends to this server?>", "<[Discord Invite](https://discord.gg/c5JgrnA>", true)
-    .addField("<You can add a number of fields, I wouldn't add too many since it would look at bit crazy>", "<[Github](https://github.com/Oribuin/)>", true)
+    .addField("Join our Minecraft Server!",
+    " >> golinetwork.online << ")
+    .addField("Want to invite your friends to this server?", "[Discord Invite](https://discord.gg/c5JgrnA", true)
+    .addField("You can add a number of fields, I wouldn't add too many since it would look at bit crazy", "[Github](https://github.com/Oribuin/)", true)
     
 
     if (!channel) return;
