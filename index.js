@@ -69,7 +69,7 @@ client.on("message", async message => {
     if(msg.startsWith(prefix + "send")) {
         if(mention == null) { return; }
         message.delete();
-        mentionMessage = message.content.slice(8);
+        mentionMessage = message.content.slice(0);
         mention.sendMessage(mentionMessage);
         message.channel.send("done!");
     }
