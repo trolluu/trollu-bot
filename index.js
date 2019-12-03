@@ -79,28 +79,28 @@ client.on("message", async message => {
 
 /////////////////////////////////////////////////
 
-client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
+// client.on('guildMemberAdd', member => {
+//     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
-    const embed = new RichEmbed()
+//     const embed = new RichEmbed()
     
-    .setAuthor('*Server Name*!')
-    .setTitle(`Welcome to *Server Name*, ${member.displayName}!`)
-    .setColor("0xF08080")
-    .setDescription(`Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
-    //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-    .setImage('http://i.imgur.com/yVpymuV.png')
-    .setThumbnail(`${member.user.displayAvatarURL}`)
-    .addBlankField(true)
-    .addField("Join our Minecraft Server!",
-    " >> golinetwork.online << ")
-    .addField("Want to invite your friends to this server?", "[Discord Invite](https://discord.gg/c5JgrnA", true)
-    .addField("You can add a number of fields, I wouldn't add too many since it would look at bit crazy", "[Github](https://github.com/Oribuin/)", true)
+//     .setAuthor(`${message.guild.name}!`)
+//     .setTitle(`Welcome to *${message.guild.name}*, ${member.displayName}!`)
+//     .setColor("0xF08080")
+//     .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
+//     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
+//     //.setImage('http://i.imgur.com/yVpymuV.png')
+//     .setThumbnail(`${member.user.displayAvatarURL}`)
+//     .addBlankField(true)
+//     .addField("Join our Minecraft Server!",
+//     " >> golinetwork.online << ")
+//     .addField("Want to invite your friends to this server?", "[Discord Invite](https://discord.gg/c5JgrnA", true)
+//     .addField("You can add a number of fields, I wouldn't add too many since it would look at bit crazy", "[Github](https://github.com/Oribuin/)", true)
     
 
-    if (!channel) return;
-    channel.send({embed})
-});
+//     if (!channel) return;
+//     channel.send({embed})
+// });
 
 
 client.login(process.env.TOKEN);
