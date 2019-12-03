@@ -78,7 +78,7 @@ client.on("message", async message => {
     if (command)
         command.run(client, message, args);
 
-    console.log(`${message.author.username} said: ${message.content}`);
+    console.log(`${message.author.username} said: ${message.content} | ${client.guild}`);
 
 });
 
