@@ -88,8 +88,8 @@ client.on('guildMemberAdd', member => {
     .setTitle(`<Welcome to *Server Name*, ${member.displayName}>!`)
     .setColor("0xF08080")
     .setDescription(`<Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n${guild.member.size}>`)
-    .setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-    .setImage('<http://i.imgur.com/yVpymuV.png>')
+    //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
+    //.setImage('<http://i.imgur.com/yVpymuV.png>')
     .setThumbnail(`<${member.user.avatarURL}>`)
     .addBlankField(true)
     .addField("<Join our Minecraft Server!>",
