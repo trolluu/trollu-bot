@@ -71,7 +71,7 @@ client.on("message", async message => {
         message.delete();
         mentionMessage = message.content.slice(4);
         mention.sendMessage(mentionMessage);
-        message.channel.send("done!");
+        message.channel.send("done!").then(m => m.delete(5000));
     }
 
 
