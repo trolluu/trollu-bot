@@ -15,7 +15,7 @@ module.exports = {
         let commandName = args[0].toLowerCase()
 
         try {
-            delete require.cache[require.resolve(`./${commandName},js`)]
+            delete require.cache[require.resolve(`./${commandName}.js`)]
             bot.commands.delete(commandName)
             const pull = require(`./${commandName}.js`)
             bot.commands.set(commandName, pull)
