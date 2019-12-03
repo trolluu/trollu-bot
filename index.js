@@ -90,7 +90,7 @@ client.on('guildMemberAdd', member => {
     .setDescription(`Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     .setImage('http://i.imgur.com/yVpymuV.png')
-    .setThumbnail(`${member.user.avatarURL}`)
+    .setThumbnail(`${member.user.displayAvatarURL}`)
     .addBlankField(true)
     .addField("Join our Minecraft Server!",
     " >> golinetwork.online << ")
