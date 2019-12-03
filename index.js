@@ -60,6 +60,21 @@ client.on("message", async message => {
     if (!command) command = client.commands.get(client.aliases.get(cmd));
     // if (message.deletable) message.delete();
 
+    // Dm
+    msg = message.content.toLowerCase();
+            if(message.author.bot) return;
+
+            mention = message.mentions.users.first();
+
+            if(msg.startsWith(prefix + "send")) {
+                if(mention == null) { return; }
+                message.delete();
+                mentionMessage = message.content.slice(8);
+                mention.sendMessage(mentionMessage);
+                message.channel.send("done!");
+            }
+
+
     if (command)
         command.run(client, message, args);
 
