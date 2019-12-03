@@ -87,7 +87,7 @@ client.on('guildMemberAdd', member => {
     .setAuthor('<*Server Name*!>')
     .setTitle(`<Welcome to *Server Name*, ${member.displayName}>!`)
     .setColor("0xF08080")
-    .setDescription(`<Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n${guild.member.size}>`)
+    .setDescription(`<Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n>`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     //.setImage('<http://i.imgur.com/yVpymuV.png>')
     .setThumbnail(`<${member.user.avatarURL}>`)
