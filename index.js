@@ -89,7 +89,7 @@ client.on('guildMemberAdd', member => {
     .setColor("0xF08080")
     .setDescription(`Welcome to *Server Name*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-    .setImage('<http://i.imgur.com/yVpymuV.png>')
+    .setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.avatarURL}`)
     .addBlankField(true)
     .addField("Join our Minecraft Server!",
