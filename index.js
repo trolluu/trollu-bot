@@ -100,7 +100,7 @@ client.on("message", async message => {
     
         if (!channel) return;
         channel.send({embed})
-    });
+    })
 
 
 
