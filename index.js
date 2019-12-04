@@ -79,8 +79,8 @@ client.on("message", async message => {
 
 /////////////////////////////////////////////////
 
-client.on('guildMemberAdd', 'message', member => {
-
+client.on('guildMemberAdd', member => {
+client.on('message'), message => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
     const embed = new RichEmbed()
@@ -102,7 +102,7 @@ client.on('guildMemberAdd', 'message', member => {
 
     if (!channel) return;
     channel.send({embed})
-});
+}});
 
 
 client.login(process.env.TOKEN);
