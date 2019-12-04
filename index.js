@@ -80,13 +80,12 @@ client.on("message", async message => {
 /////////////////////////////////////////////////
 
 client.on('guildMemberAdd', member => {
-client.on('message'), message => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
     const embed = new RichEmbed()
     
     //.setAuthor("Nowy Użytkownik")
-    .setFooter(message.author.displayAvatarURL, "🌃Małe Miasto🌃")
+    .setFooter(`${member.guild.name}` , `${member.guild.displayAvatarURL}`)
     .setTitle(`*Nowy Użytkownik*`)
     .setColor("#66ff33")
     .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
@@ -102,7 +101,7 @@ client.on('message'), message => {
 
     if (!channel) return;
     channel.send({embed})
-}});
+});
 
 
 client.login(process.env.TOKEN);
