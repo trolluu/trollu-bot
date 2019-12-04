@@ -1,4 +1,4 @@
-const { Client, RichEmbed, Collection, message } = require("discord.js");
+const { Client, RichEmbed, Collection } = require("discord.js");
 const token = process.env.token;
 const fs = require("fs");
 
@@ -84,10 +84,10 @@ client.on('guildMemberAdd', member => {
 
     const embed = new RichEmbed()
     
-    .setAuthor(`${message.guild.name}!`)
-    .setTitle(`Welcome to *${message.guild.name}*, ${member.displayName}!`)
+    .setAuthor("XD!")
+    .setTitle(`Welcome to *XD*, ${member.displayName}!`)
     .setColor("0xF08080")
-    .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
+    .setDescription(`Welcome to *XD*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     .setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.displayAvatarURL}`)
