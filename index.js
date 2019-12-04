@@ -2,6 +2,7 @@ const { Client, RichEmbed, Collection } = require("discord.js");
 const token = process.env.token;
 const fs = require("fs");
 const ytdl = require("ytdl-core");
+const ffmpeg = require('ffmpeg');
 
 const prefix = "t";
 
@@ -10,8 +11,6 @@ const client = new Client({
 });
 
 var servers = {};
-
-var ffmpeg = require('ffmpeg');
 
 client.commands = new Collection();
 client.aliases = new Collection();
