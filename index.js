@@ -84,9 +84,9 @@ client.on('guildMemberAdd', member => {
 
     const embed = new RichEmbed()
     
-    .setAuthor("XD!")
-    .setTitle(`Welcome to *XD*, ${member.displayName}!`)
-    .setColor("0xF08080")
+    //.setAuthor("Nowy Użytkownik")
+    .setTitle(`*Nowy Użytkownik*`)
+    .setColor("#66ff33")
     .setDescription(`Welcome to *XD*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     .setImage('http://i.imgur.com/yVpymuV.png')
