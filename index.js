@@ -79,7 +79,7 @@ client.on("message", async message => {
 
 /////////////////////////////////////////////////
 
-client.on('guildMemberAdd', guild, member => {
+client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
     const embed = new RichEmbed()
