@@ -85,7 +85,7 @@ client.on('guildMemberAdd', member => {
     const embed = new RichEmbed()
     
     //.setAuthor("Nowy Użytkownik")
-    .setFooter(`${member.guild.name}` , `${member.guild.displayAvatarURL}`)
+    .setFooter(`${member.guild.name}` , `${member.guild.iconURL}`)
     .setTitle(`*Nowy Użytkownik*`)
     .setColor("#66ff33")
     .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
