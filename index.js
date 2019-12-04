@@ -162,12 +162,12 @@ client.on('message', message => {
             }
         
             if(!args[1]) {
-                message.channel.send("You need to provide a link!");
+                message.channel.send("You need to provide a link!").then(m => m.delete(5000));
                 return;
             }
 
             if(!message.member.voiceChannel) {
-                message.channel.send("You must be in a channel to play the bot!");
+                message.channel.send("You must be in a channel to play the bot!").then(m => m.delete(5000));
                 return;
             }
 
@@ -192,7 +192,7 @@ client.on('message', message => {
         case 'skip':
             var server = servers[message.guild.id];
             if(server.dispatcher) server.dispatcher.end();
-            message.channel.send("Skipping the song!")
+            message.channel.send("Skipping the song!").then(m => m.delete(5000))
         break;
 
         case 'stop':
@@ -203,7 +203,7 @@ client.on('message', message => {
                 }
             
                 server.dispatcher.end();
-                message.channel.send("Ending the queue leaving the voice channel!")
+                message.channel.send("Ending the queue leaving the voice channel!").then(m => m.delete(5000))
                 console.log('stopped the queue')
             
             }
