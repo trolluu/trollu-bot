@@ -1,4 +1,4 @@
-const { Client, RichEmbed, Collection } = require("discord.js");
+const { Client, RichEmbed, Collection, message } = require("discord.js");
 const token = process.env.token;
 const fs = require("fs");
 
@@ -74,59 +74,33 @@ client.on("message", async message => {
         mentionMessage = message.content.slice(4);
         mention.sendMessage(mentionMessage);
         message.channel.send("done!").then(m => m.delete(3000));
-    };
-
-    client.on('guildMemberAdd', member => {
-        const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
-    
-        const embed = new RichEmbed()
-        
-        .setAuthor(`${message.guild.name}!`)
-        .setTitle(`Welcome to *${message.guild.name}*, ${member.displayName}!`)
-        .setColor("0xF08080")
-        .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
-        //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-        .setImage('http://i.imgur.com/yVpymuV.png')
-        .setThumbnail(`${member.user.displayAvatarURL}`)
-        .addBlankField(true)
-        .addField("Co tu napisać, czy usunąć?",
-        " >> Co tu napisać, czy usunąć? << ")
-        .addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
-        .addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
-        
-    
-        if (!channel) return;
-        channel.send({embed})
-    });
-
-
-
+    }
 });
 
 /////////////////////////////////////////////////
 
-// client.on('guildMemberAdd', member => {
-//     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
+client.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
-//     const embed = new RichEmbed()
+    const embed = new RichEmbed()
     
-//     .setAuthor(`${message.guild.name}!`)
-//     .setTitle(`Welcome to *${message.guild.name}*, ${member.displayName}!`)
-//     .setColor("0xF08080")
-//     .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
-//     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-//     .setImage('http://i.imgur.com/yVpymuV.png')
-//     .setThumbnail(`${member.user.displayAvatarURL}`)
-//     .addBlankField(true)
-//     .addField("Co tu napisać, czy usunąć?",
-//     " >> Co tu napisać, czy usunąć? << ")
-//     .addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
-//     .addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
+    .setAuthor(`${message.guild.name}!`)
+    .setTitle(`Welcome to *${message.guild.name}*, ${member.displayName}!`)
+    .setColor("0xF08080")
+    .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
+    //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
+    .setImage('http://i.imgur.com/yVpymuV.png')
+    .setThumbnail(`${member.user.displayAvatarURL}`)
+    .addBlankField(true)
+    .addField("Co tu napisać, czy usunąć?",
+    " >> Co tu napisać, czy usunąć? << ")
+    .addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
+    .addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
     
 
-//     if (!channel) return;
-//     channel.send({embed})
-// });
+    if (!channel) return;
+    channel.send({embed})
+});
 
 
 client.login(process.env.TOKEN);
