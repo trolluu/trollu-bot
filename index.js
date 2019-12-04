@@ -91,11 +91,12 @@ client.on('guildMemberAdd', member => {
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     //.setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.displayAvatarURL}`)
-    .addBlankField(true)
+    //.addBlankField(true)
     //.addField(`${member.user.tag}`)
     //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
     //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
-    
+    .setTimestamp()
+    .setFooter(guild.displayName, guild.user.displayAvatarURL)
 
     if (!channel) return;
     channel.send({embed})
