@@ -79,13 +79,13 @@ client.on("message", async message => {
 
 /////////////////////////////////////////////////
 
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', guild, member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
     const embed = new RichEmbed()
     
     //.setAuthor("Nowy Użytkownik")
-    .setFooter(member.guild.displayAvatarURL, member.guild.displayName)
+    .setFooter(guild.displayAvatarURL, guild.displayName)
     .setTitle(`*Nowy Użytkownik*`)
     .setColor("#66ff33")
     .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
