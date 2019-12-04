@@ -89,7 +89,7 @@ client.on('guildMemberAdd', member => {
     .setColor("0xF08080")
     .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-    //.setImage('http://i.imgur.com/yVpymuV.png')
+    .setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.displayAvatarURL}`)
     .addBlankField(true)
     .addField("Co tu napisać, czy usunąć?",
