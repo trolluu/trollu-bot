@@ -80,7 +80,7 @@ client.on("message", async message => {
 /////////////////////////////////////////////////
 //              Welcomer
 client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
+    const channel = member.guild.channels.find(ch => ch.name === '👋witamy👋') 
 
     const embed = new RichEmbed()
     
@@ -105,7 +105,7 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('guildMemberRemove', member => {
-    const channel = member.guild.channels.find(ch => ch.name === 'nara') 
+    const channel = member.guild.channels.find(ch => ch.name === '😔żegnamy😔') 
 
     const embed = new RichEmbed()
     
