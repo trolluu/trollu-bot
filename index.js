@@ -84,10 +84,10 @@ client.on('guildMemberAdd', member => {
 
     const embed = new RichEmbed()
     
-    //.setAuthor(`${message.guild.name}!`)
-    .setTitle(`Welcome to *${message.guild.name}*, ${member.displayName}!`)
+    .setAuthor(`${client.guild.name}!`)
+    .setTitle(`Welcome to *${client.guild.name}*, ${member.displayName}!`)
     .setColor("0xF08080")
-    .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
+    .setDescription(`Welcome to *${client.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     .setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.displayAvatarURL}`)
