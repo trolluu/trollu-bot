@@ -138,77 +138,77 @@ client.on('guildMemberRemove', member => {
 //                  Music                       //
 //////////////////////////////////////////////////
 
-client.on('message', message => {
+// client.on('message', message => {
 
-    let args = message.content.substring(prefix.length).split(" ");
+//     let args = message.content.substring(prefix.length).split(" ");
 
-    switch (args[0]) {
-        case 'play':
+//     switch (args[0]) {
+//         case 'play':
             
-            function play(connection, message) {
-                var server = servers[message.guild.id];
+//             function play(connection, message) {
+//                 var server = servers[message.guild.id];
 
-                server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+//                 server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
 
-                server.queue.shift();
+//                 server.queue.shift();
 
-                server.dispatcher.on("end", function() {
-                    if(server.queue[0]) {
-                        play(connection, message);
-                    }else {
-                        connection.disconnect();
-                    }
-                });
-            }
+//                 server.dispatcher.on("end", function() {
+//                     if(server.queue[0]) {
+//                         play(connection, message);
+//                     }else {
+//                         connection.disconnect();
+//                     }
+//                 });
+//             }
         
-            if(!args[1]) {
-                message.channel.send("You need to provide a link!").then(m => m.delete(5000));
-                return;
-            }
+//             if(!args[1]) {
+//                 message.channel.send("You need to provide a link!").then(m => m.delete(5000));
+//                 return;
+//             }
 
-            if(!message.member.voiceChannel) {
-                message.channel.send("You must be in a channel to play the bot!").then(m => m.delete(5000));
-                return;
-            }
+//             if(!message.member.voiceChannel) {
+//                 message.channel.send("You must be in a channel to play the bot!").then(m => m.delete(5000));
+//                 return;
+//             }
 
-            if(!servers[message.guild.id]) servers[message.guild.id] = {
-                queue: []
-            }
+//             if(!servers[message.guild.id]) servers[message.guild.id] = {
+//                 queue: []
+//             }
 
-            var server = servers[message.guild.id];
+//             var server = servers[message.guild.id];
 
-            server.queue.push(args[1]);
+//             server.queue.push(args[1]);
 
-            if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-                play(connection, message);
-            })
+//             if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+//                 play(connection, message);
+//             })
         
 
 
 
 
-        break;
+//         break;
     
-        case 'skip':
-            var server = servers[message.guild.id];
-            if(server.dispatcher) server.dispatcher.end();
-            message.channel.send("Skipping the song!").then(m => m.delete(5000))
-        break;
+//         case 'skip':
+//             var server = servers[message.guild.id];
+//             if(server.dispatcher) server.dispatcher.end();
+//             message.channel.send("Skipping the song!").then(m => m.delete(5000))
+//         break;
 
-        case 'stop':
-            var server = servers[message.guild.id];
-            if(message.guild.voiceConnection) {
-                for(var i = server.queue.length -1; i >=0; i--) {
-                    servers.queue.splice(i, 1);
-                }
+//         case 'stop':
+//             var server = servers[message.guild.id];
+//             if(message.guild.voiceConnection) {
+//                 for(var i = server.queue.length -1; i >=0; i--) {
+//                     servers.queue.splice(i, 1);
+//                 }
             
-                server.dispatcher.end();
-                message.channel.send("Ending the queue leaving the voice channel!").then(m => m.delete(5000))
-                console.log('stopped the queue')
+//                 server.dispatcher.end();
+//                 message.channel.send("Ending the queue leaving the voice channel!").then(m => m.delete(5000))
+//                 console.log('stopped the queue')
             
-            }
-        break;
-    }
-});
+//             }
+//         break;
+//     }
+// });
 
 client.login(process.env.TOKEN);
