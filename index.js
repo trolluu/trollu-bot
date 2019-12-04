@@ -79,29 +79,29 @@ client.on("message", async message => {
 
 /////////////////////////////////////////////////
 
-// client.on('guildMemberAdd', member => {
-//     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
+client.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
-//     const embed = new RichEmbed()
+    const embed = new RichEmbed()
     
-//     //.setAuthor("Nowy Użytkownik")
-//     .setFooter(client.guild.displayAvatarURL, client.guild.displayName)
-//     .setTitle(`*Nowy Użytkownik*`)
-//     .setColor("#66ff33")
-//     .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
-//     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-//     //.setImage('http://i.imgur.com/yVpymuV.png')
-//     .setThumbnail(`${member.user.displayAvatarURL}`)
-//     //.addBlankField(true)
-//     //.addField(`${member.user.tag}`)
-//     //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
-//     //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
-//     .setTimestamp()
+    //.setAuthor("Nowy Użytkownik")
+    .setFooter(message.guild.displayAvatarURL, message.guild.name)
+    .setTitle(`*Nowy Użytkownik*`)
+    .setColor("#66ff33")
+    .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
+    //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
+    //.setImage('http://i.imgur.com/yVpymuV.png')
+    .setThumbnail(`${member.user.displayAvatarURL}`)
+    //.addBlankField(true)
+    //.addField(`${member.user.tag}`)
+    //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
+    //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
+    .setTimestamp()
     
 
-//     if (!channel) return;
-//     channel.send({embed})
-// });
+    if (!channel) return;
+    channel.send({embed})
+});
 
 
 client.login(process.env.TOKEN);
