@@ -85,9 +85,10 @@ client.on('guildMemberAdd', member => {
     const embed = new RichEmbed()
     
     //.setAuthor("Nowy Użytkownik")
+    .setFooter(guild.displayAvatarURL, guild.displayName)
     .setTitle(`*Nowy Użytkownik*`)
     .setColor("#66ff33")
-    .setDescription(`Welcome to *XD*, ${member.displayName}\n${member.user.tag}\n`)
+    .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     //.setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.displayAvatarURL}`)
@@ -96,7 +97,7 @@ client.on('guildMemberAdd', member => {
     //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
     //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
     .setTimestamp()
-    .setFooter(guild.displayName, guild.user.displayAvatarURL)
+    
 
     if (!channel) return;
     channel.send({embed})
