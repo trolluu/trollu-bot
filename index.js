@@ -74,65 +74,35 @@ client.on("message", async message => {
         mentionMessage = message.content.slice(4);
         mention.sendMessage(mentionMessage);
         message.channel.send("done!").then(m => m.delete(3000));
-    };
-
-
-
-    client.on('guildMemberAdd', member => {
-        const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
-    
-        const embed = new RichEmbed()
-        
-        //.setAuthor("Nowy Użytkownik")
-        .setFooter(message.author.displayAvatarURL, "🌃Małe Miasto🌃")
-        .setTitle(`*Nowy Użytkownik*`)
-        .setColor("#66ff33")
-        .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
-        //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-        //.setImage('http://i.imgur.com/yVpymuV.png')
-        .setThumbnail(`${member.user.displayAvatarURL}`)
-        //.addBlankField(true)
-        //.addField(`${member.user.tag}`)
-        //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
-        //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
-        .setTimestamp()
-        
-    
-        if (!channel) return;
-        channel.send({embed})
-    })
-
-
-
-
-
+    }
 });
 
 /////////////////////////////////////////////////
 
-// client.on('guildMemberAdd', member => {
-//     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
+client.on('guildMemberAdd', 'message', member => {
 
-//     const embed = new RichEmbed()
+    const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
+
+    const embed = new RichEmbed()
     
-//     //.setAuthor("Nowy Użytkownik")
-//     .setFooter(.displayAvatarURL, "🌃Małe Miasto🌃")
-//     .setTitle(`*Nowy Użytkownik*`)
-//     .setColor("#66ff33")
-//     .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
-//     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-//     //.setImage('http://i.imgur.com/yVpymuV.png')
-//     .setThumbnail(`${member.user.displayAvatarURL}`)
-//     //.addBlankField(true)
-//     //.addField(`${member.user.tag}`)
-//     //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
-//     //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
-//     .setTimestamp()
+    //.setAuthor("Nowy Użytkownik")
+    .setFooter(message.author.displayAvatarURL, "🌃Małe Miasto🌃")
+    .setTitle(`*Nowy Użytkownik*`)
+    .setColor("#66ff33")
+    .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
+    //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
+    //.setImage('http://i.imgur.com/yVpymuV.png')
+    .setThumbnail(`${member.user.displayAvatarURL}`)
+    //.addBlankField(true)
+    //.addField(`${member.user.tag}`)
+    //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
+    //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
+    .setTimestamp()
     
 
-//     if (!channel) return;
-//     channel.send({embed})
-// });
+    if (!channel) return;
+    channel.send({embed})
+});
 
 
 client.login(process.env.TOKEN);
