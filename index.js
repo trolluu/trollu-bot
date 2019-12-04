@@ -84,7 +84,7 @@ client.on('guildMemberAdd', member => {
 
     const embed = new RichEmbed()
     
-    .setAuthor(`${message.guild.name}!`)
+    //.setAuthor(`${message.guild.name}!`)
     .setTitle(`Welcome to *${message.guild.name}*, ${member.displayName}!`)
     .setColor("0xF08080")
     .setDescription(`Welcome to *${message.guild.name}*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
