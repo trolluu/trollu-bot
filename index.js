@@ -11,6 +11,8 @@ const client = new Client({
 
 var servers = {};
 
+var ffmpeg = require('ffmpeg');
+
 client.commands = new Collection();
 client.aliases = new Collection();
 
