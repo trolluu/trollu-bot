@@ -78,7 +78,7 @@ client.on("message", async message => {
 });
 
 /////////////////////////////////////////////////
-
+//              Welcomer
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome') 
 
@@ -102,6 +102,32 @@ client.on('guildMemberAdd', member => {
     if (!channel) return;
     channel.send({embed})
 });
+
+
+client.on('guildMemberRemove', member => {
+    const channel = member.guild.channels.find(ch => ch.name === 'nara') 
+
+    const embed = new RichEmbed()
+    
+    //.setAuthor("Nowy Użytkownik")
+    .setFooter(`${member.guild.name}` , `${member.guild.iconURL}`)
+    .setTitle(`*Użytkownik wyszedł :(*`)
+    .setColor("#66ff33")
+    .setDescription(`*No i kurwa masz przejebane!*\n${member.user.tag}\n`)
+    //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
+    //.setImage('http://i.imgur.com/yVpymuV.png')
+    .setThumbnail(`${member.user.displayAvatarURL}`)
+    //.addBlankField(true)
+    //.addField(`${member.user.tag}`)
+    //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
+    //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
+    .setTimestamp()
+    
+
+    if (!channel) return;
+    channel.send({embed})
+});
+
 
 
 client.login(process.env.TOKEN);
