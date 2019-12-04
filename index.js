@@ -88,7 +88,7 @@ client.on('guildMemberAdd', member => {
     .setFooter(`${member.guild.name}` , `${member.guild.iconURL}`)
     .setTitle(`*Nowy Użytkownik*`)
     .setColor("#66ff33")
-    .setDescription(`@${member.displayName}\n${member.user.tag}\n`)
+    .setDescription(`Siemano!\n${member.user.tag}\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     //.setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.displayAvatarURL}`)
