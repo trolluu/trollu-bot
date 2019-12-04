@@ -89,13 +89,12 @@ client.on('guildMemberAdd', member => {
     .setColor("#66ff33")
     .setDescription(`Welcome to *XD*, ${member.displayName}\nYou are currently in ${channel.name}!\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
-    .setImage('http://i.imgur.com/yVpymuV.png')
+    //.setImage('http://i.imgur.com/yVpymuV.png')
     .setThumbnail(`${member.user.displayAvatarURL}`)
     .addBlankField(true)
-    .addField("Co tu napisać, czy usunąć?",
-    " >> Co tu napisać, czy usunąć? << ")
-    .addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
-    .addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
+    .addField(`${member.user.tag}`)
+    //.addField("Co tu napisać, czy usunąć??", "[Discord Invite](https://discord.gg/c5JgrnA", true)
+    //.addField("Co tu napisać, czy usunąć?", "[Github](https://github.com/Oribuin/)", true)
     
 
     if (!channel) return;
