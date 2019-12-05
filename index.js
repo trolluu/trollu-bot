@@ -3,7 +3,7 @@ const token = process.env.token;
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
-const active = new globalMap();
+const active = new GlobalMap();
 
 const prefix = "t";
 
