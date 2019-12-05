@@ -1,5 +1,6 @@
 const { Client, RichEmbed, Collection } = require("discord.js");
 const token = process.env.token;
+const ownerID = process.env.ownerID
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
@@ -16,12 +17,12 @@ var servers = {};
 client.commands = new Collection();
 client.aliases = new Collection();
 
-client.categories = fs.readdirSync("./commands/");
+//client.categories = fs.readdirSync("./commands/");
 
 
-["command"].forEach(handler => {
-    require(`./handler/${handler}`)(client);
-});
+// ["command"].forEach(handler => {
+//     require(`./handler/${handler}`)(client);
+// });
 
 client.on("ready", () => {
     console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
@@ -81,10 +82,17 @@ client.on("message", async message => {
         message.channel.send("done!").then(m => m.delete(3000));
     }
 
-    let ops = {
-        active: active,
-        connection: await message.member.voiceChannel.join()
-    };
+    try {
+        let ops = {
+            ownerID: ownerID,
+            active: active
+        }
+    
+        let commandFile = require(`./commands/${cmd}.js`);
+        commandFile.run(client, message, args, ops);
+    }catch(e) {
+        console.log(e);
+    }
 });
 
 /////////////////////////////////////////////////
