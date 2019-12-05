@@ -39,7 +39,7 @@ module.exports = {
 async function play(client, ops, data) {
     client.channels.get(data.queue[0].announceChannel).send(`Now Playing: ${data.queue[0].songTitle} | Requested By: ${data.queue[0].requester}`);
 
-    data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, {filter: 'audioonly' }));
+    data.dispatcher = await ops.connection.playStream(ytdl(data.queue[0].url, { filter: "audioonly" }));
     data.dispatcher.guildID = data.guildID;
     data.dispatcher.once("finish", function() {
         end(client, ops, this);
