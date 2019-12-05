@@ -1,5 +1,5 @@
 const ytdl = require("ytdl-core");
-
+const active = new Map();
 
 module.exports = {
     name: "play",
@@ -40,14 +40,14 @@ module.exports = {
 async function play(client, ops, data) {
     client.channels.get(data.queue[0].announceChannel).send(`Now Playing: ${data.queue[0].songTitle} | Requested By: ${data.queue[0].requester}`);
 
-    data.dispatcher = await data.connection.play(ytdl(data.queue[0].url, {filter: 'audioonly' }));
+    data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, {filter: 'audioonly' }));
     data.dispatcher.guildID = data.guildID;
     data.dispatcher.once("finish", function() {
-        finish(client, ops, this);
+        end(client, ops, this);
     });
 }
 
-function finish(client, ops, dispatcher) {
+function end(client, ops, dispatcher) {
     let fetched = ops.active.get(dispatcher.guildID);
 
     fetched.queue.shift();
