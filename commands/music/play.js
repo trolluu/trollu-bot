@@ -6,7 +6,7 @@ module.exports = {
     aliases: ["p"],
     category: "music",
     description: "",
-    run: async (client, message, args) => {
+    run: async (client, message, args, ops) => {
         if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel.");
         if(!args[0]) return message.channel.send("Sorry, please input a url following the command.");
 
