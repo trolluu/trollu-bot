@@ -7,7 +7,7 @@ module.exports = {
     description: "",
     run: async (client, message, args) => {
 
-    weather.find({search: args.join(" "), deagreeType: 'C'}, function(err, result) {
+    weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
         if(err) message.channel.send(err);
 
         if(result.length === 0) {
