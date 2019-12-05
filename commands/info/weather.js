@@ -23,7 +23,7 @@ module.exports = {
         .setThumbnail(current.imageUrl)
         .setColor(0x00AF86)
         .addField('Timezone', `GMT+${location.timezone}`, true)
-        .addField('Degree Type',location.deagreeType, true)
+        .addField('Degree Type',location.degreeType, true)
         .addField('Temperature',`${current.temperature} °C`, true)
         .addField('Feels Like', `${current.feelslike} °C`, true)
         .addField('Winds',current.winddisplay, true)
