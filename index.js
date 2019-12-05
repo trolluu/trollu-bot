@@ -3,7 +3,7 @@ const token = process.env.token;
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
-const active = new GlobalMap();
+const active = new Map();
 
 const prefix = "t";
 
@@ -81,17 +81,10 @@ client.on("message", async message => {
         message.channel.send("done!").then(m => m.delete(3000));
     }
 
-    try {
-
-        let ops = {
-            active: active
-        }
-    
-        let commandFile = require(`./commands/${cmd}.js`);
-        commandFile.run(client, message, args, ops);
-    }catch(e) {
-        //console.log(e);
-    }
+    let ops = {
+        active: active,
+        connection: await message.member.voiceChannel.join()
+    };
 });
 
 /////////////////////////////////////////////////
