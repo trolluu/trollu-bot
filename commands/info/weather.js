@@ -22,7 +22,7 @@ module.exports = {
         .setAuthor(`Weather for ${current.observationpoint}`)
         .setThumbnail(current.imageUrl)
         .setColor(0x00AF86)
-        .addField('Timezone', `GMT+${location.timezone}`, true)
+        .addField('Timezone', `GMT${location.timezone}`, true)
         .addField('Degree Type',location.degreetype, true)
         .addField('Temperature',`${current.temperature} °C`, true)
         .addField('Feels Like', `${current.feelslike} °C`, true)
