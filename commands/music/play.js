@@ -1,5 +1,4 @@
 const ytdl = require("ytdl-core");
-const active = new Map();
 
 module.exports = {
     name: "play",
