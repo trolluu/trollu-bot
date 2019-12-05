@@ -7,7 +7,7 @@ module.exports = {
     description: "",
     run: async (client, message, args) => {
 
-    weather.find({search: args.join(" "), deagreeType: 'C'}, function(err, result) {
+    weather.find({search: args.join(" "), deagreeType: '°C'}, function(err, result) {
         if(err) message.channel.send(err);
 
         if(result.length === 0) {
@@ -24,8 +24,8 @@ module.exports = {
         .setColor(0x00AF86)
         .addField('Timezone', `GMT${location.timezone}`, true)
         .addField('Degree Type',location.deagreeType, true)
-        .addField('Temperature',`${current.temperature}`, true)
-        .addField('Feels Like', `${current.feelslike}`, true)
+        .addField('Temperature',`${current.temperature} °C`, true)
+        .addField('Feels Like', `${current.feelslike} °C`, true)
         .addField('Winds',current.winddisplay, true)
         .addField('Humidity', `${current.humidity}%`, true)
 
