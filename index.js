@@ -24,27 +24,27 @@ client.categories = fs.readdirSync("./commands/");
     require(`./handler/${handler}`)(client);
 });
 
-client.on("ready", () => {
-    console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
-    client.user.setPresence({
-        status: "idle",
-        game: {
-            name: "⚠ PRZERWA TECHNICZNA ⚠",
-            type: "WATCHING"
-        }
-    });
-});
-
-
-// client.on("ready", async () =>{
+// client.on("ready", () => {
 //     console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
-//     function changing_status() {
-//         let status = ["| thelp |", "| 🐒👀 |", `| ${client.guilds.size} servers! |`, "| 🎄🎁 |"]
-//         let randomStatus = status[Math.floor(Math.random() * status.length)]
-//         client.user.setActivity(randomStatus, {type: 'WATCHING'});
-//     }
-//     setInterval(changing_status, 60000)
+//     client.user.setPresence({
+//         status: "idle",
+//         game: {
+//             name: "⚠ PRZERWA TECHNICZNA ⚠",
+//             type: "WATCHING"
+//         }
+//     });
 // });
+
+
+client.on("ready", async () =>{
+    console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
+    function changing_status() {
+        let status = ["| thelp |", "| 🐒👀 |", `| ${client.guilds.size} servers! |`, "| 🎄🎁 |"]
+        let randomStatus = status[Math.floor(Math.random() * status.length)]
+        client.user.setActivity(randomStatus, {type: 'WATCHING'});
+    }
+    setInterval(changing_status, 60000)
+});
 
 
 client.on("message", async message => {
