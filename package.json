@@ -21,6 +21,7 @@
     "opusscript": "0.0.7",
     "random-puppy": "^1.1.0",
     "rebuild": "^0.1.2",
+    "weather-js": "^2.0.0",
     "ytdl-core": "^1.0.3"
   }
 }
