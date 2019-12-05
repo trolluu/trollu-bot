@@ -19,6 +19,6 @@ module.exports = {
         let connection = await message.member.voiceChannel.join();
         let dispatcher = await connection.playStream(ytdl(args[0], {filter: 'audioonly' }));
 
-        message.channel.send(`Now playing, ${info.title}`);
+        message.channel.send(`Now playing: ${info.title}`);
     }
 }    
