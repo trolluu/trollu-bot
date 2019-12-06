@@ -25,6 +25,6 @@ module.exports = {
             `💟 ${Math.floor(love)}%\n\n${loveLevel}`)
             .setThumbnail(person.user.displayAvatarURL);
 
-        message.channel.send(embed);
+        message.channel.send(embed); 
     }
 }    
