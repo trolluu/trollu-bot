@@ -65,7 +65,8 @@ client.on("message", async message => {
     }
 
     let prefix = prefixes[message.guild.id].prefixes;
-    
+    console.log(prefix);
+
     if (!message.content.startsWith(prefix)) return;
 
     if(cooldown.has(message.author.id)) {
