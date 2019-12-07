@@ -92,17 +92,17 @@ client.on("message", async message => {
         message.channel.send("done!").then(m => m.delete(3000));
     }
 
-    try {
-        let ops = {
-            ownerID: ownerID,
-            active: active
-        }
+    // try {
+    //     let ops = {
+    //         ownerID: ownerID,
+    //         active: active
+    //     }
     
-        let commandFile = require(`./commands/music/${cmd}.js`);
-        commandFile.run(client, message, args, ops);
-    }catch(e) {
-        console.log(e);
-    }
+    //     let commandFile = require(`./commands/music/${cmd}.js`);
+    //     commandFile.run(client, message, args, ops);
+    // }catch(e) {
+    //     console.log(e);
+    // }
 
     setTimeout(() => {
         cooldown.delete(message.author.id)
