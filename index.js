@@ -1,6 +1,7 @@
 const { Client, RichEmbed, Collection } = require("discord.js");
 const token = process.env.token;
 const ownerID = process.env.ownerID
+const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
@@ -8,7 +9,7 @@ const ffmpeg = require('ffmpeg');
 let cooldown = new Set();
 let cdseconds = 5;
 
-const prefix = "t";
+//const prefix = "t";
 
 const client = new Client({
     disableEveryone: true
@@ -26,34 +27,47 @@ client.categories = fs.readdirSync("./commands/");
     require(`./handler/${handler}`)(client);
 });
 
-// client.on("ready", () => {
-//     console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
-//     client.user.setPresence({
-//         status: "idle",
-//         game: {
-//             name: "⚠ PRZERWA TECHNICZNA ⚠",
-//             type: "WATCHING"
-//         }
-//     });
-// });
-
-
-client.on("ready", async () =>{
+client.on("ready", () => {
     console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
-    function changing_status() {
-        let status = ["| thelp |", "| 🐒👀 |", `| ${client.guilds.size} servers! |`, "| 🎄🎁 |"]
-        let randomStatus = status[Math.floor(Math.random() * status.length)]
-        client.user.setActivity(randomStatus, {type: 'WATCHING'});
-    }
-    setInterval(changing_status, 60000)
+    client.user.setPresence({
+        status: "idle",
+        game: {
+            name: "⚠ PRZERWA TECHNICZNA ⚠",
+            type: "WATCHING"
+        }
+    });
 });
+
+
+// client.on("ready", async () =>{
+//     console.log(`${client.user.username}, online! on ${client.guilds.size} servers.`);
+//     function changing_status() {
+//         let status = ["| thelp |", "| 🐒👀 |", `| ${client.guilds.size} servers! |`, "| 🎄🎁 |"]
+//         let randomStatus = status[Math.floor(Math.random() * status.length)]
+//         client.user.setActivity(randomStatus, {type: 'WATCHING'});
+//     }
+//     setInterval(changing_status, 60000)
+// });
 
 
 client.on("message", async message => {
 
     if (message.author.bot) return;
     if (!message.guild) return;
+    //if (!message.content.startsWith(prefix)) return;
+    
+    let prefixes = JSON.parse(fs.readFileSync("/.prefixes.json", "utf8"));
+
+    if(!prefixes[message.guild.id]) {
+        prefixes[message.guild.id] = {
+            prefixes: botconfig.prefix
+        };
+    }
+
+    let prefix = prefixes[message.guild.id].prefixes;
+    
     if (!message.content.startsWith(prefix)) return;
+
     if(cooldown.has(message.author.id)) {
         message.delete();
         return message.reply("You have to wait 5 seconds between commands.").then(m => m.delete(5000))
