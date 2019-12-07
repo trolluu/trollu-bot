@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["p"],
     category: "music",
     description: "",
-    run: async (client, message, args) => {
+    run: async (client, message, args, active) => {
         if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel.");
         if(!args[0]) return message.channel.send("Sorry, please input a url following the command.");
 
@@ -27,7 +27,7 @@ module.exports = {
             announceChannel: message.channel.id
         });
     
-        if(!data.dispatcher) play(client, data);
+        if(!data.dispatcher) play(client, data, active);
         else {
             message.channel.send(`Added To Queue: ${info.title} | Requested By: ${message.author.id}`);
         }
@@ -46,7 +46,7 @@ async function play(client, data) {
     });
 }
 
-function end(client, dispatcher) {
+function end(client, dispatcher, active) {
     let fetched = active.get(dispatcher.guildID);
 
     fetched.queue.shift();
