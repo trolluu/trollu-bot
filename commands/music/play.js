@@ -13,7 +13,7 @@ module.exports = {
 
         if(!validate) return message.channel.send("Sorry, please input a **valid** url following the command.");
 
-        let info = await ytdl.getInfo(args[0]);
+        let info = await ytdl.videoInfo(args[0]);
 
         let data = active.get(message.guild.id) || {};
         if(!data.connection) data.connection = await message.member.voiceChannel.join();
