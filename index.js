@@ -58,9 +58,9 @@ client.on("message", async message => {
         message.delete();
         return message.reply("You have to wait 5 seconds between commands.").then(m => m.delete(5000))
     }
-    //if(!message.member.hasPermission("ADMINISTRATOR")) {
+    if(!message.member.hasPermission("ADMINISTRATOR")) {
         cooldown.add(message.author.id);
-    //}
+    }
     if (!message.member) message.member = await message.guild.fetchMember(message);
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
