@@ -146,7 +146,7 @@ client.on('guildMemberRemove', member => {
     //.setAuthor("Nowy Użytkownik")
     .setFooter(`${member.guild.name}` , `${member.guild.iconURL}`)
     .setTitle(`*Użytkownik wyszedł :(*`)
-    .setColor("#66ff33")
+    .setColor("#fd0204")
     .setDescription(`*No i kurwa masz przejebane!*\n${member.user.tag}\n`)
     //.setURL('<https://github.com/Oribuin/OriWelcomeBot/blob/master/README.md>')
     //.setImage('http://i.imgur.com/yVpymuV.png')
