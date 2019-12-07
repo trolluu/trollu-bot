@@ -4,7 +4,7 @@ const ownerID = process.env.ownerID
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
-// const active = new Map();
+const active = new Map();
 let cooldown = new Set();
 let cdseconds = 5;
 
@@ -92,17 +92,17 @@ client.on("message", async message => {
         message.channel.send("done!").then(m => m.delete(3000));
     }
 
-    // try {
-    //     let ops = {
-    //         ownerID: ownerID,
-    //         active: active
-    //     }
+    try {
+        let ops = {
+            ownerID: ownerID,
+            active: active
+        }
     
-    //     let commandFile = require(`./commands/${cmd}.js`);
-    //     commandFile.run(client, message, args, ops);
-    // }catch(e) {
-    //     console.log(e);
-    // }
+        let commandFile = require(`./commands/${cmd}.js`);
+        commandFile.run(client, message, args, ops);
+    }catch(e) {
+        console.log(e);
+    }
 
     setTimeout(() => {
         cooldown.delete(message.author.id)
