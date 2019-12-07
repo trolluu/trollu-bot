@@ -98,7 +98,7 @@ client.on("message", async message => {
             active: active
         }
     
-        let commandFile = require(`./commands/${cmd}.js`);
+        let commandFile = require(`./commands/music/${cmd}.js`);
         commandFile.run(client, message, args, ops);
     }catch(e) {
         console.log(e);
