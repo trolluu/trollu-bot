@@ -3,9 +3,9 @@ const fs = require("fs");
 
 module.exports = {
     name: "prefix",
-    description: "Calculate the love affinity you have for another person.",
+    description: "",
     category: "moderation",
-    usage: "[mention | id | username]",
+    usage: "<prefix>",
     run: async (bot, message, args) => {
         if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("No no no.");
         if(!args[0] || args[0 == "help"]) return message.reply(`Usage: ${prefix}prefix <desired prefix here>`);
@@ -16,7 +16,7 @@ module.exports = {
             prefixes: args[0]
         };
     
-        fs.writeFile("./prefixes,json", JSON.stringify(prefixes), (err) => {
+        fs.writeFile("../../prefixes.json", JSON.stringify(prefixes), (err) => {
             if(err) console.log(err)
         });
 
