@@ -56,7 +56,7 @@ client.on("message", async message => {
     if (!message.content.startsWith(prefix)) return;
     if(cooldown.has(message.author.id)) {
         message.delete();
-        return message.reply("You have to wait 5 seconds between commands.")
+        return message.reply("You have to wait 5 seconds between commands.").then(m => m.delete(5000))
     }
     //if(!message.member.hasPermission("ADMINISTRATOR")) {
         cooldown.add(message.author.id);
