@@ -1,7 +1,6 @@
 const { Client, RichEmbed, Collection } = require("discord.js");
 const token = process.env.token;
 const ownerID = process.env.ownerID
-const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
@@ -9,7 +8,7 @@ const ffmpeg = require('ffmpeg');
 let cooldown = new Set();
 let cdseconds = 5;
 
-//const prefix = "t";
+const prefix = "t";
 
 const client = new Client({
     disableEveryone: true
@@ -54,21 +53,8 @@ client.on("message", async message => {
 
     if (message.author.bot) return;
     if (!message.guild) return;
-    //if (!message.content.startsWith(prefix)) return;
-    
-    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-
-    if(!prefixes[message.guild.id]) {
-        prefixes[message.guild.id] = {
-            prefixes: botconfig.prefix
-        };
-    }
-
-    let prefix = prefixes[message.guild.id].prefixes;
-    console.log(prefix);
-
     if (!message.content.startsWith(prefix)) return;
-
+    
     if(cooldown.has(message.author.id)) {
         message.delete();
         return message.reply("You have to wait 5 seconds between commands.").then(m => m.delete(5000))
