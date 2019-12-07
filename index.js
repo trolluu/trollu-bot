@@ -4,7 +4,7 @@ const ownerID = process.env.ownerID
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
-const active = new Map();
+const active = new Map("ops");
 let cooldown = new Set();
 let cdseconds = 5;
 
