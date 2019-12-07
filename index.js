@@ -31,7 +31,7 @@ client.categories = fs.readdirSync("./commands/");
 //     client.user.setPresence({
 //         status: "idle",
 //         game: {
-//             name: "⛔ Jak naprawić passata - PRZERWA TECHNICZNA ⛔",
+//             name: "⛔ Jak naprawić passata 🔧 - PRZERWA TECHNICZNA ⛔",
 //             type: "WATCHING"
 //         }
 //     });
