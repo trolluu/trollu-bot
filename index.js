@@ -32,7 +32,7 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "idle",
         game: {
-            name: "⚠ PRZERWA TECHNICZNA ⚠",
+            name: "⛔ PRZERWA TECHNICZNA ⛔",
             type: "WATCHING"
         }
     });
@@ -56,7 +56,7 @@ client.on("message", async message => {
     if (!message.guild) return;
     //if (!message.content.startsWith(prefix)) return;
     
-    let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json", "utf8"));
+    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
     if(!prefixes[message.guild.id]) {
         prefixes[message.guild.id] = {
