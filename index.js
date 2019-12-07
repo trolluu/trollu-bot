@@ -5,6 +5,8 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ffmpeg = require('ffmpeg');
 // const active = new Map();
+let cooldown = new Set();
+let cdseconds = 5;
 
 const prefix = "t";
 
@@ -52,6 +54,13 @@ client.on("message", async message => {
     if (message.author.bot) return;
     if (!message.guild) return;
     if (!message.content.startsWith(prefix)) return;
+    if(cooldown.has(message.author.id)) {
+        message.delete();
+        return message.reply("You have to wait 5 seconds between commands.")
+    }
+    //if(!message.member.hasPermission("ADMINISTRATOR")) {
+        cooldown.add(message.author.id);
+    //}
     if (!message.member) message.member = await message.guild.fetchMember(message);
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -93,6 +102,11 @@ client.on("message", async message => {
     // }catch(e) {
     //     console.log(e);
     // }
+
+    setTimeout(() => {
+        cooldown.delete(message.author.id)
+    }, cdseconds * 1000)
+
 });
 
 /////////////////////////////////////////////////
