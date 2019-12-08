@@ -6,12 +6,11 @@ module.exports = {
     category: "other",
     description: "",
     run: async (client, message, args) => {
-        ascii.font(args.join(' '), 'Doom', function(rendered) {
-            rendered = rendered.String.trimRight();
+        ascii.font(args.join(' '), 'Doom', async txt => {
+            
+            if(txt.length > 2000) return message.channel.send("Sorry,that message is too long!");
 
-            if(rendered.length > 2000) return message.channel.send("Sorry,that message is too long!");
-
-            message.channel.send(rendered, {
+            message.channel.send(txt, {
                 code: 'md'
             });
         });
