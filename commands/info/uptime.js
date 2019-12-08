@@ -5,7 +5,7 @@ module.exports = {
     name: "up time",
     aliases: ["up"],
     category: "info",
-    description: "Returns latency and API ping",
+    description: "Bot uptime.",
     run: async (bot, message, args) => {
         const embed = new RichEmbed()
         function duration(ms) {
