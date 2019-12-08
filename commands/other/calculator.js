@@ -5,7 +5,7 @@ module.exports = {
     name: "calculator",
     aliases: ["calc"],
     category: "other",
-    description: "",
+    description: "To jest najgorsze.",
     run: async (client, message, args, tools) => {
         if(!args[0]) return message.channel.send('Please input a calculation!').then(m => m.delete(5000));
 
