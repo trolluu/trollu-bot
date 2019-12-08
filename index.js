@@ -16,6 +16,18 @@ const client = new Client({
 
 var servers = {};
 
+
+const serverStats = {
+    guildID: '567032410517274644',
+    totalUsersID: '653330485837299742',
+    memberCountID: '653330597380489225',
+    botCountID: '653330724794925056'
+};
+
+
+
+
+
 client.commands = new Collection();
 client.aliases = new Collection();
 
@@ -135,6 +147,11 @@ client.on('guildMemberAdd', member => {
 
     if (!channel) return;
     channel.send({embed})
+
+    if(member.guild.id !== serverStats.guildID) return;
+    client.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`);
+    client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
+    client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 
 
@@ -160,6 +177,11 @@ client.on('guildMemberRemove', member => {
 
     if (!channel) return;
     channel.send({embed})
+
+    if(member.guild.id !== serverStats.guildID) return;
+    client.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`);
+    client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
+    client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 
 
