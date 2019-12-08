@@ -4,7 +4,8 @@ module.exports = {
     category: "other",
     usage: "<name>",
     run: async (bot, message, args) => {
+        const member = getMember(message, args.join(""));
         let aTaged = message.mentions.users.first();
-        message.channel.send(`Avatar ${aTaged.user.username} ${aTaged.displayAvatarURL}`);
+        message.channel.send(`Avatar: ${member.displayName} ${aTaged.displayAvatarURL}`);
     }
 }
