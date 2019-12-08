@@ -5,7 +5,7 @@ const { promptMessage } = require("../../functions.js");
 module.exports = {
     name: "kick",
     category: "moderation",
-    description: "Kick the member",
+    description: "Kick the member.",
     usage: "<id | mention>",
     run: async (client, message, args) => {
         const logChannel = message.guild.channels.find(c => c.name === "logs") || message.channel;
