@@ -1,6 +1,6 @@
 module.exports = {
     name: "avatar",
-    description: "Sends the user's avatar",
+    description: "Sends the user's avatar.",
     category: "other",
     usage: "<name>",
     run: async (bot, message, args) => {
