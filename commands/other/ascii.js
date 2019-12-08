@@ -8,7 +8,7 @@ module.exports = {
     run: async (client, message, args) => {
         ascii.font(args.join(' '), 'Doom', async txt => {
             
-            if(txt.length > 2000) return message.channel.send("Sorry,that message is too long!");
+            //if(txt.length > 2000) return message.channel.send("Sorry,that message is too long!");
 
             message.channel.send(txt, {
                 code: 'md'
