@@ -5,7 +5,7 @@ const dateFormat = require("dateformat")
 
 module.exports = {
     name: "steam",
-    description: "Get steam statistics of a user",
+    description: "Get steam statistics of a user.",
     usage: "<user>",
     category: "info",
     accessableby: "Members",
