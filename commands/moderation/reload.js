@@ -4,7 +4,7 @@ const Discord = require("discord.js")
 
 module.exports = {
     name: "reload",
-    description: "Reload command",
+    description: "Reload command.",
     usage: "<command>",
     category: "moderation",
     run: async (bot, message, args) => {
