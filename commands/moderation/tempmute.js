@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports = {
     name: "tempmute",
     category: "moderation",
-    description: "Tempmute the member",
+    description: "Tempmute the member.",
     usage: "<id | 1s/m/h/d>",
     run: async (bot, message, args) => {
 
