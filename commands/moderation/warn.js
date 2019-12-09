@@ -30,7 +30,7 @@ module.exports = {
         .setDescription("Warns")
         .setAuthor(message.author.username)
         .setColor("#fc6400")
-        .addField("Warned User", wUser.tag)
+        .addField("Warned User", `<@${wUser.tag}>`)
         .addField("Warned In", message.channel)
         .addField("Number of Warnings", warns[wUser.id].warns)
         .addField("Reason", reason);
