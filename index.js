@@ -17,6 +17,16 @@ const client = new Client({
 var servers = {};
 
 
+const botStats = {
+    totalGuildsID: '653708455181287494',
+    totalUsersID: '653708378476118016',
+    totalChannelsID: '653708597074591784'
+};
+
+
+
+
+
 client.commands = new Collection();
 client.aliases = new Collection();
 
@@ -163,7 +173,17 @@ client.on('guildMemberRemove', member => {
     channel.send({embed})
 });
 
+client.on('guildCreate', guild => {
+    client.channels.get(botStats.totalGuildsID).setName(`Total Guilds : ${client.guilds.size}`);
+    client.channels.get(botStats.totalUsersID).setName(`Total Users : ${client.guilds.reduce((a, g) => a + g.memberCount, 0)}`);
+    client.channels.get(botStats.totalChannelsID).setName(`Total Channels : ${client.channels.size}`);
+});
 
+client.on('guildDelete', guild => {
+    client.channels.get(botStats.totalGuildsID).setName(`Total Guilds : ${client.guilds.size}`);
+    client.channels.get(botStats.totalUsersID).setName(`Total Users : ${client.guilds.reduce((a, g) => a + g.memberCount, 0)}`);
+    client.channels.get(botStats.totalChannelsID).setName(`Total Channels : ${client.channels.size}`);
+});
 //////////////////////////////////////////////////
 //                  Music                       //
 //////////////////////////////////////////////////
