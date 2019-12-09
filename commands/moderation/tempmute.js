@@ -3,6 +3,7 @@ const ms = require("ms");
 
 module.exports = {
     name: "tempmute",
+    aliases: ["tm"],
     category: "moderation",
     description: "Tempmute the member.",
     usage: "<id | 1s/m/h/d>",
