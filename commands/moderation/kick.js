@@ -8,7 +8,7 @@ module.exports = {
     description: "Kick the member.",
     usage: "<id | mention>",
     run: async (client, message, args) => {
-        const logChannel = message.guild.channels.find(c => c.name === "logs") || message.channel;
+        const logChannel = message.guild.channels.find(c => c.name === "reports") || message.channel;
 
         if (message.deletable) message.delete();
 
