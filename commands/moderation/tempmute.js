@@ -7,7 +7,8 @@ module.exports = {
     description: "Tempmute the member.",
     usage: "<id | 1s/m/h/d>",
     run: async (bot, message, args) => {
-
+      if (message.deletable) message.delete();
+      
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.").then(m => m.delete(5000));
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!").then(m => m.delete(5000));
