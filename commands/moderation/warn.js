@@ -23,7 +23,7 @@ module.exports = {
         warns[wUser.id].warns++;
 
         fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-            if (err) console.log(err);
+            if (err) console.log(err)
         });
     
         let warnEmbed = new RichEmbed()
