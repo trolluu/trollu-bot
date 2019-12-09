@@ -4,13 +4,6 @@ const ms = require("ms");
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 
-
-fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-    if (err) console.log(err);
-});
-
-
-
 module.exports = {
     name: "warn",
     category: "moderation",
@@ -29,9 +22,9 @@ module.exports = {
     
         warns[wUser.id].warns++;
 
-        // fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-        //     if (err) console.log(err);
-        // });
+        fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+            if (err) console.log(err);
+        });
     
         let warnEmbed = new RichEmbed()
         .setDescription("Warns")
