@@ -1,7 +1,7 @@
 const { RichEmbed } = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let warns = JSON.parse(fs.readFileSync("../../warnings.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
     
         warns[wUser.id].warns++;
 
-        fs.writeFile("../../warnings.json", JSON.stringify(warns), (err) => {
+        fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
             if (err) console.log(err);
         });
     
@@ -46,11 +46,11 @@ module.exports = {
 
             let mutetime = "10s";
             await(wUser.addRole(muterole.id));
-            message.channel.send(`${wUser.tag} has been temporarily muted`);
+            message.channel.send(`<@${wUser.tag}> has been temporarily muted`);
 
             setTimeout(function(){
                 wUser.removeRole(muterole.id)
-                message.channel.reply(`They have been unmuted.`)
+                message.channel.reply(`<@${wUser.id}> has been unmuted.`)
             }, ms(mutetime))
         }
         if(warns[wUser.id].warns == 3){
