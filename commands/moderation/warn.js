@@ -1,7 +1,7 @@
 const { RichEmbed } = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("../../warnings.json", "utf8"));
 
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
     
         warns[wUser.id].warns++;
 
-        fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+        fs.writeFile("../../warnings.json", JSON.stringify(warns), (err) => {
             if (err) console.log(err);
         });
     
