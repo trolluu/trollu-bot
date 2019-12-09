@@ -1,17 +1,3 @@
-
-
-module.exports = {
-    name: "warn",
-    category: "moderation",
-    description: "Warn the member",
-    run: async (client, message, args) => {
-        if (message.deletable) message.delete();
-        const msg = await message.channel.send("**W budowie!**").then(m => m.delete(5000));
-
-
-
-
-
 // const { RichEmbed } = require("discord.js");
 // const fs = require("fs");
 // const ms = require("ms");
