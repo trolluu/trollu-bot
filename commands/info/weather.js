@@ -6,6 +6,7 @@ module.exports = {
     category: "info",
     description: "Shows the weather.",
     run: async (client, message, args) => {
+        if (message.deletable) message.delete();
 
     weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
         if(err) message.channel.send(err);

@@ -7,6 +7,7 @@ module.exports = {
     category: "info",
     description: "Bot uptime.",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
         const embed = new RichEmbed()
         function duration(ms) {
             const sec = Math.floor((ms / 1000) % 60).toString()

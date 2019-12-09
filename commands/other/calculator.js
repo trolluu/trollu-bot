@@ -7,6 +7,7 @@ module.exports = {
     category: "other",
     description: "To jest najgorsze.",
     run: async (client, message, args, tools) => {
+        if (message.deletable) message.delete();
         if(!args[0]) return message.channel.send('Please input a calculation!').then(m => m.delete(5000));
 
         let resp;

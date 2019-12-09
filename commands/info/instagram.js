@@ -10,6 +10,7 @@ module.exports = {
     category: "info",
     usage: "<name>",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
         const name = args.join(" ");
 
         if(!name) {

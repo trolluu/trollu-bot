@@ -10,6 +10,7 @@ module.exports = {
     category: "info",
     accessableby: "Members",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
         const token = process.env.steamtoken;
         if(!args[0]) return message.channel.send("Please provide an account name!").then(m => m.delete(5000))
         const url = `http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${token}&vanityurl=${args.join(" ")}`;

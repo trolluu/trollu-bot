@@ -5,6 +5,8 @@ module.exports = {
     category: "fun",
     description: "Ask a question",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
+        
         if(!args[2]) return message.reply("Please ask a full question!");
         let replies = ["Yes.", "No.", "I don't know.", "Ask again later"];
 

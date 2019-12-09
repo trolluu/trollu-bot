@@ -7,6 +7,8 @@ module.exports = {
     category: "fun",
     usage: "[mention | id | username]",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
+        
         let person = getMember(message, args[0]);
 
         if(!person || message.author.id === person.id) {

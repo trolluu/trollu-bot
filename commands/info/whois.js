@@ -9,6 +9,8 @@ module.exports = {
     description: "Returns user information.",
     usage: "[username | id, | mention",
     run: async (client, message, args) => {
+        if (message.deletable) message.delete();
+        
         const member = getMember(message, args.join(""));
 
         const joined = formatDate(member.joinedAt);

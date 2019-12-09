@@ -7,6 +7,7 @@ module.exports = {
     description: "Bot restart.",
     category: "owner",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
         if(message.author.id != "323113623721607168") return message.channel.send("You're not the bot owner!").then(m => m.delete(5000))
         
         try {

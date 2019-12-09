@@ -8,6 +8,7 @@ module.exports = {
     usage: "<command>",
     category: "owner",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
         if(message.author.id != "323113623721607168") return message.channel.send("You're not the bot owner!").then(m => m.delete(5000))
 
         if(!args[0]) return message.channel.send("Please provide a command to reload!").then(m => m.delete(5000))

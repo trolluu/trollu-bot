@@ -6,6 +6,8 @@ module.exports = {
     category: "fun",
     description: "Sends an epic meme.",
     run: async (client, message, args) => {
+        if (message.deletable) message.delete();
+        
         const subReddits = ["dankmeme", "meme", "me_irl"];
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 

@@ -7,7 +7,8 @@ module.exports = {
     description: "Server information.",
     category: "info",
     run: async (bot, message, args) => {
-        
+        if (message.deletable) message.delete();
+
         const embed = new RichEmbed()
         .setColor("RANDOM")
         //.setTitle(account.full_name)

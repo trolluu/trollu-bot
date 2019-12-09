@@ -4,6 +4,7 @@ module.exports = {
     category: "other",
     usage: "<name>",
     run: async (bot, message, args) => {
+        if (message.deletable) message.delete();
         let aTaged = message.mentions.users.first();
         message.channel.send(`**Avatar:** (${aTaged.displayAvatarURL})`);
     }
