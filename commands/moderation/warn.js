@@ -50,12 +50,12 @@ module.exports = {
 
             setTimeout(function(){
                 wUser.removeRole(muterole.id)
-                message.channel.reply(`<@${wUser.id}> has been unmuted.`)
+                message.channel.reply(`<@${wUser.id}> has been unmuted.`);
             }, ms(mutetime))
         }
         if(warns[wUser.id].warns == 3){
             message.guild.member(wUser).ban(reason);
-            message.reply(`<@${wUser.id}> has been banned.`)
+            message.reply(`<@${wUser.id}> has been banned.`);
         }
     }
 }
