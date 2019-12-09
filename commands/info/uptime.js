@@ -22,7 +22,8 @@ module.exports = {
             .addField("I have been online for:")
             .addField(`${duration(bot.uptime)}`)
             .setTimestamp()
-        
+
+            message.channel.send(embed);
         }
         
 
