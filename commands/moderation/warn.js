@@ -4,6 +4,13 @@ const ms = require("ms");
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 
+
+fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err);
+});
+
+
+
 module.exports = {
     name: "warn",
     category: "moderation",
@@ -22,9 +29,9 @@ module.exports = {
     
         warns[wUser.id].warns++;
 
-        fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-            if (err) console.log(err);
-        });
+        // fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+        //     if (err) console.log(err);
+        // });
     
         let warnEmbed = new RichEmbed()
         .setDescription("Warns")
@@ -50,12 +57,12 @@ module.exports = {
 
             setTimeout(function(){
                 wUser.removeRole(muterole.id)
-                message.channel.reply(`<@${wUser.id}> has been unmuted.`);
+                message.channel.reply(`<@${wUser.id}> has been unmuted.`)
             }, ms(mutetime))
         }
         if(warns[wUser.id].warns == 3){
             message.guild.member(wUser).ban(reason);
-            message.reply(`<@${wUser.id}> has been banned.`);
+            message.reply(`<@${wUser.id}> has been banned.`)
         }
     }
 }
