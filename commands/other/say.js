@@ -9,6 +9,12 @@ module.exports = {
     run: async (client, message, args) => {
         if (message.deletable) message.delete();
 
+        if (!message.member.hasPermission("ADMINISTRATOR")) {
+            return message.reply("❌ You do not have permissions to commmand **say**!")
+                .then(m => m.delete(5000));
+        
+        }
+
         if (args.length < 1) 
             return message.reply("Nothing to say?").then(m => m.delete(5000));
     
