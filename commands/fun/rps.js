@@ -10,6 +10,9 @@ module.exports = {
     usage: "rps",
     run: async (client, message, args) => {
         if (message.deletable) message.delete();
+        
+        const member = getMember(message, args.join(""));
+
         const embed = new RichEmbed()
             .setColor("#ffffff")
             .setFooter(member.displayName, member.user.displayAvatarURL)
