@@ -37,11 +37,11 @@ module.exports = {
   if(!mutetime) return message.reply("You didn't specify a time!").then(m => m.delete(5000));
 
   await(tomute.addRole(muterole.id));
-  message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`).then(m => m.delete(10000));
+  message.reply(`<@${tomute.id}> **has been muted for:** ${ms(ms(mutetime))}`).then(m => m.delete(10000));
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`<@${tomute.id}> has been unmuted!`).then(m => m.delete(5000));
+    message.channel.send(`<@${tomute.id}> **has been unmuted!**`).then(m => m.delete(5000));
   }, ms(mutetime));
 
 }}
