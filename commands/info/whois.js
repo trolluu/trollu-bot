@@ -27,13 +27,13 @@ module.exports = {
             .setColor(member.displayHexColor === "#000000" ? "#ffffff" : member.displayHexColor)
 
             .addField('Member information', stripIndents`>** Display name:** ${member.displayName}
-            >** Joined at:** ${joined}
+            >** Joined at:** ${joined} (MM/D/YYYY)
             >** Roles:** ${roles}`, true)
 
             .addField('User informations', stripIndents`>** ID:** ${member.user.id}
             >** Username:** ${member.user.username}
             >** Discord Tag:** ${member.user.tag}
-            >** Created at:** ${created}`, true)
+            >** Created at:** ${created} (MM/D/YYYY)`, true)
 
             .setTimestamp()
 
