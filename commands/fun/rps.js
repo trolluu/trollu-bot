@@ -1,3 +1,4 @@
+const { getMember } = require("../../functions.js");
 const { RichEmbed } = require("discord.js");
 const { promptMessage } = require("../../functions.js");
 
