@@ -20,7 +20,10 @@ module.exports = {
             .addField("Bot information", stripIndents`**- Username:** ${bot.user.username}
             **- Created On:** ${created}
             **- Favourite car:** Volkswagen Passat B5 1.9 TDI
-            **- Owner:** trollu_#4005`)
+            **- Owner:** trollu_#4005`, true)
+
+            .addField('Prefix', stripIndents`>** t**
+            >** All Commands:** __thelp__`, true)
 
             .setTimestamp()
 
