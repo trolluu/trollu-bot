@@ -1,7 +1,6 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
-//const { formatDate } = require("../../functions.js");
-const dateFormat = require("dateformat")
+const { formatDate } = require("../../functions.js");
 
 module.exports = {
     name: "botinfo",
@@ -19,8 +18,8 @@ module.exports = {
             //.setURL(`https://instagram.com/${name}`)
             .setThumbnail(bot.user.displayAvatarURL)
             .addField("Bot information", stripIndents`**- Username:** ${bot.user.username}
-            **- Created On:** ${dateFormat(timecreated * 1000, "d/mm/yyyy (h:MM:ss TT) ")}
-            **- Favourite car:** Volkswagen Passat B5 1.9 TDI
+            **- Created On:** ${created}
+            **- Favourite Car:** Volkswagen Passat B5 1.9 TDI
             **- Owner:** trollu_#4005`, true)
 
             .addField('Prefix', stripIndents`>** t**
