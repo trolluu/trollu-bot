@@ -1,12 +1,12 @@
-const Discord = require("discord.js")
+// const Discord = require("discord.js")
 
-module.exports = {
-    name: "react",
-    description: "Add a reaction.",
-    category: "other",
-    accessableby: "Members",
-    run: async (bot, message, args) => {
-        if(message.author.id != "323113623721607168") return;
-        message.react('🚗');
-    }
-}
+// module.exports = {
+//     name: "react",
+//     description: "Add a reaction.",
+//     category: "other",
+//     accessableby: "Members",
+//     run: async (bot, message, args) => {
+//         if(message.author.id != "323113623721607168") return;
+//         message.react('🚗');
+//     }
+// }
