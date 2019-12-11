@@ -12,7 +12,8 @@ module.exports = {
         if (message.deletable) message.delete();
         const embed = new RichEmbed()
             .setColor("#ffffff")
-            .setFooter(message.guild.me.displayName, client.user.dispalyAvatarURL)
+            .setFooter(member.displayName, member.user.displayAvatarURL)
+            //.setFooter(message.guild.me.displayName, client.user.dispalyAvatarURL)
             .setDescription("Add a reaction to one of these emojis to play the game!")
             .setTimestamp();
 
