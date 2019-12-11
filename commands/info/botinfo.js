@@ -19,7 +19,7 @@ module.exports = {
             .setThumbnail(bot.user.displayAvatarURL)
             .addField("Bot information", stripIndents`**- Username:** ${bot.user.username}
             **- Created On:** ${created}
-            **- Favourite car:** Volkswagen Passat B5 1,9 TDI}
+            **- Favourite car:** Volkswagen Passat B5 1,9 TDI
             **- Owner:** trollu_#4005`)
 
             .setTimestamp()
