@@ -1,4 +1,6 @@
 const { RichEmbed } = require("discord.js");
+const member = getMember(message, args.join(""));
+const { getMember } = require("../../functions.js");
 
 module.exports = {
     name: "avatar",
