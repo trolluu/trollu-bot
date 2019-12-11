@@ -11,12 +11,9 @@ module.exports = {
         
         const member = getMember(message, args.join(""));
 
-        // let aTaged = message.mentions.users.first();
-        // message.channel.send(`**Avatar:** (${aTaged.displayAvatarURL})`);
-
         const embed = new RichEmbed()
         .setColor("RANDOM")
-        .setTitle(`${member.user.tag}s profile picture!`)
+        .setTitle(`${member.user.tag}'s profile picture!`)
         .setURL(member.user.displayAvatarURL)
         .setImage(member.user.displayAvatarURL)
 
