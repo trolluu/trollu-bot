@@ -12,9 +12,9 @@ module.exports = {
 
         const embed = new RichEmbed()
         .setColor("RANDOM")
-        .setTitle(`${user.tag}s profile picture!`)
-        .setURL(user.displayAvatarURL)
-        .setImage(user.displayAvatarURL)
+        .setTitle(`${member.user.tag}s profile picture!`)
+        .setURL(member.user.displayAvatarURL)
+        .setImage(member.user.displayAvatarURL)
 
         message.channel.send(embed);
     }
