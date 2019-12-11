@@ -1,5 +1,4 @@
 const { RichEmbed } = require("discord.js");
-const member = getMember(message, args.join(""));
 const { getMember } = require("../../functions.js");
 
 module.exports = {
@@ -9,6 +8,9 @@ module.exports = {
     usage: "<name>",
     run: async (bot, message, args) => {
         if (message.deletable) message.delete();
+        
+        const member = getMember(message, args.join(""));
+
         // let aTaged = message.mentions.users.first();
         // message.channel.send(`**Avatar:** (${aTaged.displayAvatarURL})`);
 
