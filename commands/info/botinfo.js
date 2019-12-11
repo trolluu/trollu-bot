@@ -10,7 +10,7 @@ module.exports = {
     run: async (bot, message, args) => {
         if (message.deletable) message.delete();
 
-        const created = formatDate(member.user.createdAt);
+        const created = formatDate(bot.user.createdAt);
 
         const embed = new RichEmbed()
             .setColor("RANDOM")
