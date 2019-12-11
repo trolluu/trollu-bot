@@ -18,7 +18,7 @@ module.exports = {
             //.setURL(`https://instagram.com/${name}`)
             .setThumbnail(bot.user.displayAvatarURL)
             .addField("Bot information", stripIndents`**- Username:** ${bot.user.username}
-            **- Created On:** ${created}
+            **- Created On:** ${created} (MM/D/YYYY)
             **- Favourite Car:** Volkswagen Passat B5 1.9 TDI
             **- Owner:** trollu_#4005`, true)
 
