@@ -39,7 +39,9 @@ module.exports = {
         **- Posts:** ${account.edge_owner_to_timeline_media.count}
         **- Followers:** ${account.edge_followed_by.count}
         **- Following:** ${account.edge_follow.count}
-        **- Private account:** ${account.is_private ? "Yes 🔐" : "Nope 🔓"}`);
+        **- Private account:** ${account.is_private ? "Yes 🔐" : "Nope 🔓"}`)
+
+        .setTimestamp();
 
         message.channel.send(embed);
     }

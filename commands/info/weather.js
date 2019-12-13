@@ -30,6 +30,8 @@ module.exports = {
         .addField('Winds',current.winddisplay, true)
         .addField('Humidity', `${current.humidity}%`, true)
 
+        .setTimestamp();
+
         message.channel.send({embed});
     })
     }

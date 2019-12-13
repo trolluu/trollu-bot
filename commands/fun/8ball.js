@@ -17,7 +17,10 @@ module.exports = {
         .setAuthor(message.author.tag)
         .setColor("#FF9900")
         .addField("Question", question)
-        .addField("Answer", replies[result]);
+        .addField("Answer", replies[result])
+        
+        .setTimestamp();
+        
         message.channel.send(ballembed);
     }
 }

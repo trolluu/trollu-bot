@@ -25,8 +25,10 @@ module.exports = {
             .setColor("#ffb6c1")
             .addField(`☁ **${person.displayName}** loves **${message.member.displayName}** this much:`,
             `💟 ${Math.floor(love)}%\n\n${loveLevel}`)
-            .setThumbnail(person.user.displayAvatarURL);
+            .setThumbnail(person.user.displayAvatarURL)
 
+            .setTimestamp();
+            
         message.channel.send(embed); 
     }
 }    
