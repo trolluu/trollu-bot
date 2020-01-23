@@ -16,7 +16,7 @@ module.exports = {
         }
 
         if (!args[0]) {
-            message.channel.send("You need to evaluate _**SOMETHING**__, please?")
+            message.channel.send("You need to evaluate _**SOMETHING**_, please?")
                 .then(m => m.delete(5000));
         }
 
@@ -27,7 +27,7 @@ module.exports = {
             
             const toEval = args.join(" ");
             const evaluated = eval(toEval);
-            
+
             let embed = new RichEmbed()
                 .setColor("#00FF00")
                 .setTimestamp()
