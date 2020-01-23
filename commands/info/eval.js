@@ -27,6 +27,7 @@ module.exports = {
             
             const toEval = args.join(" ");
             const evaluated = eval(toEval);
+            
             let embed = new RichEmbed()
                 .setColor("#00FF00")
                 .setTimestamp()
